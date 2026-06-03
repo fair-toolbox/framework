@@ -1,5 +1,9 @@
 ---
-title: version control 
+title: version control and packaging 
 ---
 
 Coming soon; this is a placeholder.
+
+### Sources:
+[Packaging and releasing software](https://everse.software/RSQKit/packaging_releasing_software) <br>
+[Releasing software](https://everse.software/RSQKit/releasing_software) <br>

@@ -3,3 +3,8 @@ title: documentation
 ---
 
 Coming soon; this is a placeholder.
+
+### Sources:
+[Documenting software](https://everse.software/RSQKit/documenting_software) <br>
+[Readthedocs](https://everse.software/RSQKit/documenting_software_readthedocs) <br>
+[Software documentation](https://everse.software/RSQKit/software_documentation) <br>

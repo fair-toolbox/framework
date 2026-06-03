@@ -3,3 +3,10 @@ title: testing
 ---
 
 Coming soon; this is a placeholder.
+
+### Sources:
+
+[CI/CD](https://everse.software/RSQKit/ci_cd) <br> 
+[Testing software](https://everse.software/RSQKit/testing_software) <br> 
+[Task automation with Github actions](https://everse.software/RSQKit/task_automation_github_actions) <br> 
+[Software testing tutorial](https://www.geeksforgeeks.org/software-testing/software-testing-tutorial) <br> 

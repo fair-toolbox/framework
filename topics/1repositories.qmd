@@ -3,3 +3,7 @@ title: repositories
 ---
 
 Coming soon; this is a placeholder.
+
+### Sources:
+[Research Software Directory](https://research-software-directory.org/) <br>
+[Zenodo](https://zenodo.org/) <br>

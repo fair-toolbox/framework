@@ -3,3 +3,8 @@ title: software engineering quality
 ---
 
 Coming soon; this is a placeholder.
+
+
+### Sources
+[Organising software projects](https://everse.software/RSQKit/organising_software_projects) <br>
+[Code reviews](https://everse.software/RSQKit/code_review) <br> 
