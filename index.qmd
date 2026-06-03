@@ -2,26 +2,12 @@
 about: 
   id: hero
   template: solana
-  image: assets/img/logo.png
+  image: assets/img/TDCC.png
   image-shape: rounded
-  links: 
-    - text: GitHub
-      icon: github
-      aria-label: Link to Code Cafe NL GitHub organisation
-      href: https://github.com/code-cafe-nl
-listing: 
-  id: next
-  template: meetups/next-event.ejs
-  contents: meetups/events.yaml
-  max-items: 1
 ---
 
 ::: {#hero}
-<i class="nf nf-md-duck"></i> Welcome to our programming cafe. We do some cool stuff here.
+Welcome to the TDCC FAIRtools framework homepage. 
 :::
 
-## <i class="nf nf-md-calendar"></i> Next event {style="border-bottom: none;"}
-
-::: {#next}
-:::
 

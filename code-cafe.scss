@@ -7,27 +7,31 @@
 // colours
 $white: #fff;
 $black: #000;
-$primary: #521646;
-$secondary: #fcfe74;
+$color1: #F0F0F0;
+$color2: #d89018;
+$color3: #00b0de;
 
-$body-bg: $primary;
-$body-color: $white;
-$navbar-fg: $body-color;
-$navbar-bg: $body-bg;
-$link-color: $secondary;
+$body-bg: $color1;
+$body-color: $black;
+$navbar-fg: $black;
+$navbar-bg: $color1;
+$link-color: $color3;
 
 $font-family-sans-serif: "Atkinson Hyperlegible Mono", sans-serif;
 
 /*-- scss:rules --*/
 
-h1, h2, h3, h4 {
-    color: $secondary
+h1,
+h2,
+h3,
+h4 {
+  color: $color2
 }
 
 .callout {
-    border-left-color: $secondary !important;
+  border-left-color: $color2 !important;
 }
 
 .btn {
-    border: 2pt solid $secondary;
+  border: 2pt solid $color2;
 }

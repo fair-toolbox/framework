@@ -1,15 +1,37 @@
-project: 
+project:
   type: website
 
-title: "[Insert name of programming cafe]" # change me
+title: "TDCC Fairtools Framework" # change me
 theme: code-cafe.scss
 
-website: 
-  navbar: 
-    logo: assets/img/logo.png
-    right: 
+website:
+  navbar:
+    logo: assets/img/TDCC.png
+    left:
+      - href: maturity-model.qmd
+      - text: uplifting
+        menu:
+          - text: about uplifting
+            href: uplifting.qmd
+          - text: 1. repositories
+            href: topics/1repositories.qmd
+          - text: 2. testing
+            href: topics/2testing.qmd
+          - text: 3. software engineering quality
+            href: topics/3software_engineering_quality.qmd
+          - text: 4. documentation
+            href: topics/4documentation.qmd
+          - text: 5. version control
+            href: topics/5version_control.qmd
+          - text: 6. demo environment
+            href: topics/6demo_environment.qmd
+          - text: 7. graphical user interface
+            href: topics/7GUI.qmd
+          - text: 8. interoperability
+            href: topics/8interoperability.qmd
+          - text: 9. improving workflows
+            href: topics/9improving_workflows.qmd
+          - text: 10. citations
+            href: topics/10citations.qmd
+
       - href: about.qmd
-      - href: meetups/index.qmd
-      - icon: github
-        aria-label: Link to Code Cafe NL GitHub organisation
-        href: https://github.com/code-cafes-nl # change me

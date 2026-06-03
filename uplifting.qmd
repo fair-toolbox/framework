@@ -1,5 +1,5 @@
 ---
-title: about 
+title: uplifting 
 ---
 
 We are a programming cafe based in some university, part of a larger [network of programming cafes](https://github.com/code-cafes-nl).
