@@ -1,0 +1,6 @@
+---
+title: meetups
+listing: 
+  type: table
+  contents: events.yaml
+---

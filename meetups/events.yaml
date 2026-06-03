@@ -1,0 +1,17 @@
+## The item at the top will be displayed in the Next Event section
+- title: Everyday Git Part 2
+  description: Some <b>more</b> tips and tricks for using git.
+  location: Some remote location
+  presenter: Linus Torvalds
+  date:  2025-02-11
+  time:  TBD
+  filename: example-event.ics
+  path: "https://eventbrite.com"
+- title: Everyday Git
+  description: Some tips and tricks for using git.
+  location: Some remote location
+  presenter: Linus Torvalds
+  date:  2025-02-10
+  time:  TBD
+  filename: example-event.ics
+  path: "https://eventbrite.com"

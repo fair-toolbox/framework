@@ -1,0 +1,15 @@
+project: 
+  type: website
+
+title: "[Insert name of programming cafe]" # change me
+theme: code-cafe.scss
+
+website: 
+  navbar: 
+    logo: assets/img/logo.png
+    right: 
+      - href: about.qmd
+      - href: meetups/index.qmd
+      - icon: github
+        aria-label: Link to Code Cafe NL GitHub organisation
+        href: https://github.com/code-cafes-nl # change me
