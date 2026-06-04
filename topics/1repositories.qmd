@@ -5,5 +5,8 @@ title: repositories
 Coming soon; this is a placeholder.
 
 ### Sources:
-[Research Software Directory](https://research-software-directory.org/) <br>
 [Zenodo](https://zenodo.org/) <br>
+[Research Software Directory](https://research-software-directory.org/) <br>
+[bio.tools](https://bio.tools) <br>
+[SURF research cloud](https://www.surf.nl/en/services/compute/surf-research-cloud) <br>
+[Scicodes repo overview](https://scicodes.net/participants/) <br>

@@ -5,6 +5,12 @@ title: documentation
 Coming soon; this is a placeholder.
 
 ### Sources:
+#### User documentation
 [Documenting software](https://everse.software/RSQKit/documenting_software) <br>
 [Readthedocs](https://everse.software/RSQKit/documenting_software_readthedocs) <br>
-[Software documentation](https://everse.software/RSQKit/software_documentation) <br>
+[Software documentation](https://everse.software/RSQKit/software_documentation) <br> 
+
+#### Deployment documentation 
+[Reproducible software environments](https://everse.software/RSQKit/reproducible_software_environments) <br>
+[Software deployment in software development](https://www.geeksforgeeks.org/software-engineering/software-deployment-in-software-development/) <br>
+

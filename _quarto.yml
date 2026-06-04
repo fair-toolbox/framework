@@ -21,8 +21,8 @@ website:
             href: topics/3software_engineering_quality.qmd
           - text: 4. documentation
             href: topics/4documentation.qmd
-          - text: 5. version control
-            href: topics/5version_control.qmd
+          - text: 5. version control and packaging
+            href: topics/5version_control_and_packaging.qmd
           - text: 6. demo environment
             href: topics/6demo_environment.qmd
           - text: 7. graphical user interface
