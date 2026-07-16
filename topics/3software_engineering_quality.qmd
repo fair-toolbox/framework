@@ -1,10 +1,301 @@
 ---
-title: software engineering quality 
+title: "Writing Maintainable Research Software"
+subtitle: "Improving software engineering quality"
+format:
+  html:
+    toc: true
+    toc-depth: 2
 ---
 
-Coming soon; this is a placeholder.
+::: {.callout-note}
+## FAIR contribution
 
+The guide primarily supports the following FAIR principles:
 
-### Sources
-[Organising software projects](https://everse.software/RSQKit/organising_software_projects) <br>
-[Code reviews](https://everse.software/RSQKit/code_review) <br> 
+**Reusable**
+
+- Well-structured software is easier for others to understand, maintain, and extend.
+- Consistent coding practices reduce the effort required to reuse software in new research projects.
+
+**Accessible**
+
+- Clear project organisation lowers the barrier for new users and contributors.
+
+:::
+
+# Why does software quality matter?
+
+Research software often begins as a solution to a specific scientific problem. As new features are added, collaborators join the project, or the software is reused for other studies, the codebase naturally grows in complexity.
+
+Poor software quality rarely prevents software from working today. Instead, it makes future development slower and more error-prone. Small changes become difficult, onboarding new contributors takes longer, and bugs become harder to identify.
+
+Improving software quality is therefore less about writing "perfect" code and more about making future development easier—for collaborators, users, and your future self.
+
+---
+
+# What does "software quality" mean?
+
+For research software, software quality can be summarised by one question:
+
+> **Can someone else understand, modify, and trust this software?**
+
+Many aspects contribute to this, including:
+
+- a logical project structure;
+- readable code;
+- consistent coding conventions;
+- collaborative development practices.
+
+This guide focuses on practical improvements that provide long-term benefits without requiring a complete redesign of your software.
+
+---
+
+# Principle 1: Organise your project consistently
+
+As projects grow, files tend to accumulate wherever they are needed at the time. While this works initially, it becomes increasingly difficult to understand where functionality lives.
+
+A consistent project structure helps contributors answer questions such as:
+
+- Where is the source code?
+- Where are the tests?
+- Where is the documentation?
+- Where are example datasets?
+
+A typical project structure might look like:
+
+```text
+my-project/
+├── src/
+├── tests/
+├── docs/
+├── examples/
+├── LICENSE
+├── README.md
+└── pyproject.toml
+```
+
+### Good practice
+
+- Separate source code, tests, documentation, and example data.
+- Avoid mixing generated files with source code.
+- Keep configuration files in predictable locations.
+
+---
+
+# Principle 2: Write code for people
+
+Code is read far more often than it is written. Clear code helps reviewers understand changes, allows collaborators to contribute more easily, and makes future maintenance less frustrating.
+
+## Use descriptive names
+
+Instead of:
+
+```python
+x = load("samples.csv")
+```
+
+prefer:
+
+```python
+samples = load_samples("samples.csv")
+```
+
+The second example immediately communicates what is being loaded.
+
+## Keep functions focused
+
+Instead of one function that:
+
+- reads input data;
+- filters observations;
+- performs the analysis;
+- exports results;
+
+consider splitting it into smaller functions:
+
+```text
+load_data()
+filter_samples()
+run_analysis()
+export_results()
+```
+
+Smaller functions are easier to understand, reuse, and test.
+
+## Avoid deeply nested logic
+
+Rather than:
+
+```text
+if A
+    if B
+        if C
+            ...
+```
+
+consider returning early:
+
+```text
+if not A:
+    return
+
+if not B:
+    return
+
+if not C:
+    return
+
+...
+```
+
+Reducing nesting makes the main logic easier to follow.
+
+## Remove unused code
+
+Instead of leaving code commented out:
+
+```python
+# old_analysis(data)
+# old_plot(results)
+```
+
+remove it completely.
+
+Version control already preserves previous implementations, so commented-out code usually adds clutter rather than useful history.
+
+---
+
+# Principle 3: Have your code reviewed
+
+Another person will often notice things that you miss. Having your code reviewed is one of the most effective ways to improve software quality before changes become part of your project.
+
+A reviewer may identify:
+
+### Unclear code
+
+> "What does this function actually calculate?"
+
+Clearer names or a short docstring may make the purpose immediately obvious.
+
+### Potential bugs
+
+For example:
+
+- assuming an input file always exists;
+- not checking for missing values;
+- forgetting to handle unexpected input.
+
+### Duplicated logic
+
+Imagine finding the same data-cleaning code in four different files.
+
+A reviewer may suggest moving it into a reusable function so future changes only need to be made once.
+
+### Opportunities to simplify
+
+Twenty lines of custom code may be replaceable by a well-tested library function.
+
+Simpler implementations are often easier to understand and maintain.
+
+## Automated code review
+
+Automated tools complement human reviewers by identifying common issues before code is merged.
+
+Some widely used examples include:
+
+| Tool | Purpose |
+|------|---------|
+| GitHub Pull Requests | Collaborative code review |
+| GitHub Copilot code review | AI-assisted review suggestions |
+| CodeQL | Detect security vulnerabilities and common coding mistakes |
+| Super-Linter | Run multiple linters in one workflow |
+| Ruff (Python) | Fast linting and formatting |
+| Pylint (Python) | Detect programming errors and style issues |
+| lintr (R) | Check R code for style and common issues |
+| clang-tidy (C/C++) | Static analysis for C and C++ |
+
+Automated tools provide rapid feedback but cannot judge whether code is understandable or whether an implementation is appropriate for a scientific problem.
+
+Whenever possible, combine automated checks with human code review.
+
+---
+
+# Principle 4: Improve your software incrementally
+
+Research software evolves alongside research questions. Large rewrites are rarely practical, but small improvements can be incorporated into everyday development.
+
+### While fixing a bug
+
+Suppose you discover a bug in a function that has become difficult to read.
+
+Rather than only fixing the bug, split the function into two smaller functions with clearer names. Future contributors will benefit immediately.
+
+### While adding a feature
+
+You add support for a new file format.
+
+Instead of extending an already crowded module, move all file-reading functionality into a dedicated module. Future additions become easier to implement.
+
+### While reviewing code
+
+During a code review, you realise that a function lacks a docstring.
+
+Adding a short description of its inputs and outputs helps future developers understand how the function should be used.
+
+Small improvements accumulate over time and are much easier to maintain than occasional large refactoring efforts.
+
+---
+
+# Common pitfalls
+
+## Optimising too early
+
+Premature optimisation often makes code more difficult to understand.
+
+Write code that is correct and maintainable first. Optimise performance only when measurements show that it is necessary.
+
+## Chasing perfect architecture
+
+Research software evolves alongside research questions.
+
+Design your software so that it can change rather than trying to anticipate every future requirement.
+
+## Ignoring technical debt
+
+Shortcuts are sometimes necessary, but they should be recognised and revisited.
+
+Leaving temporary solutions in place indefinitely often makes future development more difficult.
+
+---
+
+# Take-away
+
+Maintainable software is not the result of one large refactoring effort. It is the result of many small decisions that make code easier to understand, modify, and review.
+
+Improving your software incrementally helps future collaborators—and your future self—work more effectively.
+
+---
+
+# Checklist
+
+Consider the following questions:
+
+- Does your project have a consistent directory structure?
+- Can a new contributor quickly identify where important files are located?
+- Are variables and functions clearly named?
+- Do functions have a single responsibility?
+- Is code written for readability rather than cleverness?
+- Are important changes reviewed before they are merged?
+- Do you use automated code quality tools where appropriate?
+- Do you make small improvements as part of your normal development workflow?
+
+---
+
+# Related guides
+
+Continue improving your software by exploring:
+
+- **Software testing**
+- **Documentation**
+- **Version control and packaging**
+- **Improving workflows**

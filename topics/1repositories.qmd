@@ -1,12 +1,127 @@
 ---
-title: repositories 
+title: "Publishing Research Software: Repositories, Registries, and Archiving"
+subtitle: "Making research software discoverable, citable, and reusable"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
+# bibliography: references.bib
 ---
 
-Coming soon; this is a placeholder.
+::: {.callout-note}
+## FAIR contribution
 
-### Sources:
-[Zenodo](https://zenodo.org/) <br>
-[Research Software Directory](https://research-software-directory.org/) <br>
-[bio.tools](https://bio.tools) <br>
-[SURF research cloud](https://www.surf.nl/en/services/compute/surf-research-cloud) <br>
-[Scicodes repo overview](https://scicodes.net/participants/) <br>
+The guide primarily supports the following FAIR principles:
+
+**Findable**
+
+- Software can be discovered by researchers and automated systems.
+- Metadata describes what your software does.
+- Persistent identifiers allow stable referencing.
+
+**Accessible**
+
+- Released software versions remain available over time.
+- Researchers can access the information needed to obtain and use the software.
+
+**Reusable**
+
+- Others can identify, cite, and use specific versions of your software.
+
+:::
+
+# Why publish your software?
+
+Research software is a scientific output. A workflow, analysis tool, or simulation package can represent a substantial research contribution, but only if others can discover, understand, and reuse it.
+
+Making source code publicly available is an important first step, but a public repository alone does not guarantee that your software is findable or reusable.
+
+For software to become part of the scientific ecosystem, researchers need to be able to:
+
+- discover the software;
+- understand its purpose;
+- access a usable version;
+- identify the version used in a publication;
+- cite the developers who created it.
+
+Repositories, archives, and registries help provide this context by adding metadata, persistent identifiers, and structured descriptions around your software.
+
+# Before you start
+
+This guide assumes that you already have:
+
+- a source code repository (for example GitHub or GitLab);
+- a README describing your software;
+- an open-source license;
+- a way to create software releases or versions.
+
+A software license defines how others are allowed to use, modify, and redistribute your software. Without a license, others may be able to view your code, but they cannot easily determine what they are permitted to do with it.
+
+If you are unsure which license fits your project, [Choose a License](https://choosealicense.com/) provides an overview of common open-source licenses and helps you select one based on your goals.
+
+If you are still setting up the foundations of your project, see:
+
+- [Software engineering quality](software_engineering_quality.qmd)
+- [Version control and packaging](version_control_packaging.qmd)
+- [Documentation](documentation.qmd)
+
+# Code hosting, archives, and registries
+
+The term *repository* is often used broadly, but different platforms serve different purposes.
+
+Understanding these differences helps you decide where your software should be published.
+
+## Code hosting platforms
+
+Code hosting platforms are where software is developed and maintained.
+
+Examples include GitHub and GitLab.
+
+They provide:
+
+- version control;
+- collaboration tools;
+- issue tracking;
+- code review;
+- automation.
+
+A code hosting platform answers:
+
+> How is this software being developed?
+
+It does not necessarily answer:
+
+> Which version was used for a scientific result?
+
+For that, you need software archives.
+
+## Software archives
+
+A software archive preserves a specific version of your software and provides a persistent reference.
+
+This matters because software changes over time. A repository URL may point to a different version in the future than the version used in a publication.
+
+Archiving a release allows researchers to identify the exact version of software used in an analysis.
+
+For example:
+
+- Version 1.0 is archived and receives a persistent identifier.
+- Version 1.1 is released later and receives its own identifier.
+- Both versions remain available.
+
+## Software registries
+
+Software registries describe software using structured metadata.
+
+Unlike archives, registries do not primarily preserve software releases. Instead, they improve discoverability.
+
+Researchers often search for software based on scientific questions rather than software names:
+
+- Which tools analyse genomic variants?
+- Which software supports this data format?
+- Which tools are available for this biological workflow?
+
+Registries connect these scientific needs with available software.
+
+
