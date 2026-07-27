@@ -1,4 +1,5 @@
 /.quarto/
 /_site/
+/CLAUDE.md
 
 **/*.quarto_ipynb

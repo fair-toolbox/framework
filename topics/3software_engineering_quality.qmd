@@ -5,6 +5,10 @@ format:
   html:
     toc: true
     toc-depth: 2
+nocite: |
+  @rsqkit-organising-software-projects
+  @rsqkit-code-review
+  @gfg-software-maintenance
 ---
 
 ::: {.callout-note}
@@ -246,6 +250,28 @@ Small improvements accumulate over time and are much easier to maintain than occ
 
 ---
 
+# Principle 5: Plan for long-term maintenance
+
+Research software often outlives the project that funded it. Dependencies age, platforms change, and the person who understood the code best may move to a different position before the software stops being used.
+
+Maintenance work generally falls into a few recurring categories:
+
+| Type | Trigger | Example |
+|---|---|---|
+| Corrective | A bug is discovered after release | Fixing an edge case reported by a user |
+| Adaptive | The environment around the software changes | Updating code for a new Python or OS version |
+| Perfective | Feedback suggests an improvement | Speeding up a slow analysis step |
+| Preventive | A recurring risk is identified | Refactoring a fragile module before it causes issues |
+
+Two habits make this manageable rather than overwhelming:
+
+- **Pin and periodically update dependencies.** Unpinned dependencies can silently break your software when a new release changes behaviour; pinning avoids surprises, but only if you also revisit those pins occasionally rather than never.
+- **Be explicit about maintenance status.** If a project is no longer actively maintained, say so in the README. This is far more useful to future users than letting them discover it through unanswered issues.
+
+Maintenance is easiest when it is planned for, rather than treated as an emergency once something breaks.
+
+---
+
 # Common pitfalls
 
 ## Optimising too early
@@ -270,7 +296,7 @@ Leaving temporary solutions in place indefinitely often makes future development
 
 # Take-away
 
-Maintainable software is not the result of one large refactoring effort. It is the result of many small decisions that make code easier to understand, modify, and review.
+Maintainable software is not the result of one large refactoring effort. It is the result of many small decisions that make code easier to understand, modify, and review—and of planning for the maintenance that continues long after the initial development is done.
 
 Improving your software incrementally helps future collaborators—and your future self—work more effectively.
 
@@ -288,6 +314,8 @@ Consider the following questions:
 - Are important changes reviewed before they are merged?
 - Do you use automated code quality tools where appropriate?
 - Do you make small improvements as part of your normal development workflow?
+- Are your dependencies pinned, and revisited periodically rather than never?
+- If the project is no longer actively maintained, does the README say so?
 
 ---
 
@@ -295,7 +323,12 @@ Consider the following questions:
 
 Continue improving your software by exploring:
 
-- **Software testing**
-- **Documentation**
-- **Version control and packaging**
-- **Improving workflows**
+- [Testing research software](2testing.qmd)
+- [Documenting research software](4documentation.qmd)
+- [Versioning and packaging research software](5version_control_and_packaging.qmd)
+- [Improving workflows](9improving_workflows.qmd)
+
+# References
+
+::: {#refs}
+:::

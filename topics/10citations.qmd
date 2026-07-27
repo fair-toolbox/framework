@@ -1,10 +1,112 @@
 ---
-title: citations 
+title: "Making Research Software Citable"
+subtitle: "Helping others properly acknowledge and cite your software"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
+nocite: |
+  @rsqkit-citing-software
+  @rsqkit-software-identifiers
+  @rsqkit-software-metadata
 ---
 
-Coming soon; this is a placeholder.
+::: {.callout-note}
+## FAIR contribution
 
-### Sources:
-[Citing software](https://everse.software/RSQKit/citing_software) <br>
-[Software identifiers](https://everse.software/RSQKit/software_identifiers) <br>
-[Software metadata](https://everse.software/RSQKit/software_metadata) <br>
+The guide primarily supports the following FAIR principles:
+
+**Reusable**
+
+- A clear citation file tells others exactly how to credit your software when they reuse it.
+- Citable software gives contributors academic recognition, which helps sustain long-term maintenance.
+
+**Findable**
+
+- Persistent identifiers let others locate and reference the exact version of your software they used.
+
+:::
+
+# Why citation matters
+
+Research software is a scientific output, but it is not always treated as one. Without clear guidance, users cite informally, cite the wrong version, or do not cite the software at all—so the people who built and maintained it get no academic credit for the work.
+
+Making your software citable is mostly a matter of making a few decisions explicit: how you want to be cited, and which specific version was used. This guide covers the tools that make both of those things easy for others to get right.
+
+# Principle 1: Add a CITATION.cff file
+
+`CITATION.cff` is a plain-text file, in a standard format, that tells others exactly how to cite your software. GitHub recognises it automatically and shows a "Cite this repository" button on your repository page.
+
+```yaml
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Doe"
+    given-names: "Jane"
+title: "MyAnalysisTool"
+version: 1.0.0
+date-released: 2026-01-15
+doi: 10.5281/zenodo.1234567
+```
+
+Keep it updated when authors, the version, or the DOI change—an outdated `CITATION.cff` is misleading rather than merely incomplete.
+
+# Principle 2: Archive a citable version with a DOI
+
+A git repository URL is not a stable citation target: the code behind it keeps changing. Archiving a specific release gives it a persistent identifier (DOI) that always points to that exact version.
+
+Zenodo integrates directly with GitHub: once connected, creating a GitHub Release automatically archives it on Zenodo and mints a DOI. This is the same archiving concept covered in [Publishing research software](1repositories.qmd)—citation is what that persistent reference is ultimately used for.
+
+# Principle 3: Add structured metadata with CodeMeta
+
+`CITATION.cff` tells a human how to cite your software. `codemeta.json` describes it in a structured, machine-readable format—covering things like programming language, dependencies, and related publications.
+
+This metadata is what lets software registries and search tools index and surface your software automatically, rather than relying on someone finding it by chance.
+
+# Principle 4: Use identifiers consistently
+
+Citation depends on identifiers matching up wherever your software is referenced:
+
+- an [ORCID](https://orcid.org/) for each author, so contributions are correctly attributed even if names are ambiguous or change;
+- a DOI for each archived release;
+- the same repository URL and version number across your README, `CITATION.cff`, and any registry entries.
+
+Inconsistent identifiers across these places make it harder for citation tools, and for people, to confirm they are citing the right thing.
+
+# Common pitfalls
+
+## No citation guidance at all
+
+Without a `CITATION.cff` or equivalent, users are left guessing how to cite your work—and many will simply skip it, so contributors get no credit for their effort.
+
+## Citing the repository instead of a version
+
+Pointing to the live GitHub URL rather than an archived, versioned DOI means the citation does not pin down which version of the software was actually used.
+
+## Letting citation metadata go stale
+
+An author list or DOI that is not updated after a new release quietly misattributes credit, or points to an outdated version.
+
+# Take-away
+
+Making software citable is a small amount of upfront work: a `CITATION.cff` file, an archived release with a DOI, and consistent identifiers. In return, users know exactly how to credit your work, and contributors get the academic recognition their software deserves.
+
+# Checklist
+
+- Does your repository include a `CITATION.cff` file?
+- Is at least one release archived with a persistent DOI?
+- Do you have structured metadata (for example `codemeta.json`) describing your software?
+- Are author and version identifiers consistent across your README, citation file, and any registries?
+
+# Related guides
+
+Continue improving your software by exploring:
+
+- [Publishing research software](1repositories.qmd)
+- [Versioning and packaging research software](5version_control_and_packaging.qmd)
+
+# References
+
+::: {#refs}
+:::

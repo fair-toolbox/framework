@@ -6,7 +6,13 @@ format:
     toc: true
     toc-depth: 2
     code-fold: true
-# bibliography: references.bib
+nocite: |
+  @esciencecenter-rsd
+  @research-software-directory-org
+  @zenodo
+  @scicodes-participants
+  @choosealicense
+  @opensource-licenses
 ---
 
 ::: {.callout-note}
@@ -62,9 +68,9 @@ If you are unsure which license fits your project, [Choose a License](https://ch
 
 If you are still setting up the foundations of your project, see:
 
-- [Software engineering quality](software_engineering_quality.qmd)
-- [Version control and packaging](version_control_packaging.qmd)
-- [Documentation](documentation.qmd)
+- [Software engineering quality](3software_engineering_quality.qmd)
+- [Version control and packaging](5version_control_and_packaging.qmd)
+- [Documentation](4documentation.qmd)
 
 # Code hosting, archives, and registries
 
@@ -124,4 +130,37 @@ Researchers often search for software based on scientific questions rather than 
 
 Registries connect these scientific needs with available software.
 
+# Licensing and compatibility
+
+A license determines what others are legally allowed to do with your software: use it, modify it, redistribute it, or build on it commercially. Publishing source code without a license does not place it in the public domain—by default, no one has permission to reuse it at all.
+
+## Choosing a license
+
+Most research software uses a permissive license, which allows almost any use with minimal restrictions:
+
+| License | Key characteristic |
+|---|---|
+| MIT | Very permissive; requires only attribution |
+| Apache 2.0 | Permissive; also grants an explicit patent license |
+| BSD 3-Clause | Permissive; similar to MIT with an added non-endorsement clause |
+| GPL-3.0 | Copyleft; derivative works must also be released under the GPL |
+
+Permissive licenses maximise reuse, including in commercial or closed-source projects. Copyleft licenses such as the GPL guarantee that derivative works stay open, but restrict how the software can be combined with differently-licensed code.
+
+[Choose a License](https://choosealicense.com/) walks through this trade-off and recommends a license based on your goals. The [Open Source Initiative's license list](https://opensource.org/licenses) is the authoritative reference for which licenses are recognised as genuinely open source.
+
+## Checking compatibility with dependencies
+
+Your license choice is not independent of the licenses of the software you depend on. Combining GPL-licensed code into your project, for example, typically requires your own project to also be released under the GPL—even if you originally intended a permissive license.
+
+Before publishing, check the license of every dependency you rely on, particularly for:
+
+- copyleft dependencies that may impose obligations on your own license;
+- dependencies with no license at all, which cannot legally be redistributed;
+- dependencies whose license restricts commercial use, if that matters for your project.
+
+# References
+
+::: {#refs}
+:::
 

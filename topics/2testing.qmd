@@ -1,12 +1,141 @@
 ---
-title: testing
+title: "Testing Research Software"
+subtitle: "Building confidence that your software keeps working as it evolves"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
+nocite: |
+  @rsqkit-ci-cd
+  @rsqkit-testing-software
+  @rsqkit-task-automation-github-actions
+  @gfg-software-testing-tutorial
 ---
 
-Coming soon; this is a placeholder.
+::: {.callout-note}
+## FAIR contribution
 
-### Sources:
+The guide primarily supports the following FAIR principle:
 
-[CI/CD](https://everse.software/RSQKit/ci_cd) <br> 
-[Testing software](https://everse.software/RSQKit/testing_software) <br> 
-[Task automation with Github actions](https://everse.software/RSQKit/task_automation_github_actions) <br> 
-[Software testing tutorial](https://www.geeksforgeeks.org/software-testing/software-testing-tutorial) <br> 
+**Reusable**
+
+- A tested codebase gives you and others confidence that the software behaves as documented.
+- Automated tests catch regressions early, so the software keeps working correctly as it is reused, extended, or handed over to new contributors.
+
+:::
+
+# Why test research software?
+
+Research software is used to produce results that other people rely on. When a change silently breaks something, the consequences often surface much later—a figure looks slightly wrong, a collaborator reports unexpected output, or a result cannot be reproduced.
+
+Manually re-checking your code after every change does not scale. As a project grows, it becomes impractical to verify by hand that everything still works. Automated tests let you make changes with confidence, because you find out immediately whether existing behaviour is preserved.
+
+This guide focuses on building a testing *infrastructure*—the pipeline that runs your tests automatically—rather than teaching a specific testing framework. The same ideas apply whether you use pytest, testthat, JUnit, or another tool.
+
+# Principle 1: Automate your tests
+
+A test is a small piece of code that checks whether another piece of code produces the expected result. Instead of manually running an analysis and inspecting the output, a test does this automatically and reports pass or fail.
+
+```text
+function test_average():
+    result = average([1, 2, 3])
+    assert result == 2
+```
+
+Start with the functions that matter most: the ones your results depend on, or the ones that have broken before. You do not need to test everything before testing becomes useful.
+
+Automated tests only pay off if they are run consistently—not just when you remember to. That is the role of continuous integration.
+
+# Principle 2: Run tests automatically with CI
+
+Continuous integration (CI) runs your test suite automatically whenever the code changes—for example, on every push or pull request. This removes the dependency on any one person remembering to run the tests locally.
+
+A typical CI pipeline:
+
+- checks out the repository;
+- installs dependencies;
+- runs the test suite;
+- reports whether the tests passed or failed.
+
+A minimal GitHub Actions workflow that does this:
+
+```yaml
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
+```
+
+Once this file is added under `.github/workflows/`, every push and pull request triggers the tests automatically, and the result is visible directly on GitHub.
+
+# Principle 3: Structure your tests for growth
+
+Keep tests in a dedicated directory, ideally mirroring the structure of your source code. This makes it easy to find the tests for a given piece of functionality.
+
+```text
+my-project/
+├── src/
+│   └── analysis.py
+└── tests/
+    └── test_analysis.py
+```
+
+Consistent structure also makes it easier for CI, and for new contributors, to discover and run the full test suite with a single command.
+
+# Principle 4: Add tests incrementally
+
+Complete test coverage is rarely realistic for research software, and waiting for it before you start testing usually means testing never starts. Instead, build coverage gradually:
+
+- **While fixing a bug**, add a test that reproduces it before fixing it. This confirms the fix works and prevents the bug from silently returning.
+- **While adding a feature**, add a test for its expected behaviour.
+- **While reviewing code**, treat missing tests for critical logic as something worth raising, the same way you would raise unclear naming or missing documentation.
+
+Over time, this incremental approach builds meaningful coverage around the parts of the software that matter most, without requiring a dedicated testing effort.
+
+# Common pitfalls
+
+## Waiting for "enough" coverage
+
+Aiming for complete coverage before adding any tests often means no tests get written at all. A few tests around critical functionality are more valuable than a perfect suite that never gets started.
+
+## Only running tests locally
+
+Tests that are not run in CI depend on every contributor remembering to run them before pushing changes. Sooner or later, someone won't, and a regression reaches the main branch.
+
+## Ignoring failing tests
+
+A failing test that gets ignored for "just this once" tends to stay broken. Once a test suite is known to be unreliable, it stops being trusted—and stops being useful.
+
+# Take-away
+
+Testing research software is not about achieving perfect coverage. It is about building enough automated checks, run consistently through CI, that you can change your code without wondering what you might have broken.
+
+# Checklist
+
+- Do your most important functions or analyses have automated tests?
+- Do your tests run automatically on every push or pull request?
+- Are your tests kept in a dedicated, discoverable location?
+- Do you add a test whenever you fix a bug or add a feature?
+- Are failing tests addressed rather than ignored?
+
+# Related guides
+
+Continue improving your software by exploring:
+
+- [Version control and packaging](5version_control_and_packaging.qmd)
+- [Software engineering quality](3software_engineering_quality.qmd)
+
+# References
+
+::: {#refs}
+:::

@@ -1,16 +1,159 @@
 ---
-title: documentation 
+title: "Documenting Research Software"
+subtitle: "Helping others understand, install, use, and contribute to your software"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
+nocite: |
+  @rsqkit-documenting-software
+  @rsqkit-documenting-software-readthedocs
+  @rsqkit-software-documentation
+  @rsqkit-reproducible-software-environments
+  @gfg-software-deployment
+  @rsqkit-code-review
 ---
 
-Coming soon; this is a placeholder.
+::: {.callout-note}
+## FAIR contribution
 
-### Sources:
-#### User documentation
-[Documenting software](https://everse.software/RSQKit/documenting_software) <br>
-[Readthedocs](https://everse.software/RSQKit/documenting_software_readthedocs) <br>
-[Software documentation](https://everse.software/RSQKit/software_documentation) <br> 
+The guide primarily supports the following FAIR principles:
 
-#### Deployment documentation 
-[Reproducible software environments](https://everse.software/RSQKit/reproducible_software_environments) <br>
-[Software deployment in software development](https://www.geeksforgeeks.org/software-engineering/software-deployment-in-software-development/) <br>
+**Reusable**
 
+- Clear documentation helps others understand what your software does and how to use it correctly.
+- Developer documentation makes it easier for others to extend, adapt, or contribute to your software.
+
+**Accessible**
+
+- Installation and deployment instructions let others obtain a working copy of your software.
+- Well-organised documentation lowers the barrier for new users and contributors.
+
+:::
+
+# Why document research software?
+
+Software that works perfectly is still hard to reuse if nobody besides its author knows how to install it, run it, or extend it. Documentation is what turns working code into software other people can actually use.
+
+Research software typically needs to serve three different audiences at once: people who *use* it, people who *deploy* it, and people who *develop* it further. Each audience asks different questions, and documentation that only answers one of them leaves the others stuck.
+
+This guide covers all three, and gives you a structure you can apply incrementally—you do not need to write everything at once for documentation to be useful.
+
+# Principle 1: Write for three audiences
+
+Before writing documentation, it helps to be clear about who it is for.
+
+| Audience | Typical question | Documentation type |
+|---|---|---|
+| Users | "How do I install and use this?" | README, installation guide, usage examples, tutorials |
+| Deployers | "How do I run this reliably in my environment?" | Deployment guide, environment/dependency specification |
+| Developers | "How do I understand, modify, or contribute to this?" | Architecture overview, API reference, contribution guide |
+
+A single document rarely serves all three well. A README that tries to be a full API reference becomes overwhelming for a first-time user, while a README that only shows a one-line install command leaves contributors without the context they need.
+
+# Principle 2: Start with a strong README
+
+The README is usually the first, and sometimes only, documentation a user reads. It should let a new user understand what the software does and get it running, without reading anything else.
+
+A useful README typically includes:
+
+```text
+# Project name
+
+One-sentence description of what the software does.
+
+## Installation
+## Usage
+## Citation
+## License
+## Contributing
+```
+
+Keep the installation and usage sections runnable exactly as written—copy-pasted commands that fail are one of the fastest ways to lose a new user.
+
+# Principle 3: Document installation and deployment
+
+Deployment documentation answers a narrower but critical question: how does someone get this software running reliably, not just on your machine?
+
+This usually means documenting:
+
+- required dependencies and their versions;
+- how to create a reproducible environment (for example a `requirements.txt`, `environment.yml`, or container definition);
+- any external services or data the software depends on;
+- configuration needed before first use.
+
+Reproducible environments matter because "works on my machine" is not useful information to a deployer. Pinning dependency versions and providing a single command to recreate the environment removes most of the guesswork.
+
+# Principle 4: Document for contributors
+
+Developer documentation lowers the barrier for someone other than you to safely make changes. At minimum, this includes:
+
+- a short architecture overview: how the main components fit together;
+- how to set up a local development environment;
+- how to run the test suite;
+- expectations for code review before a change is merged.
+
+A `CONTRIBUTING.md` file is a natural place to collect this. It does not need to be long—pointing contributors to the right commands and expectations is usually enough.
+
+# Principle 5: Keep documentation close to the code
+
+Documentation that lives far from the code it describes tends to fall out of date. Two practices help keep it current:
+
+- **Docstrings and inline comments** describe individual functions where they are defined, so documentation changes alongside the code.
+- **Generated API references** (for example using Sphinx or Read the Docs) build user-facing documentation directly from docstrings, instead of duplicating that information by hand.
+
+A typical layout keeps documentation organised without separating it too far from the code:
+
+```text
+my-project/
+├── README.md
+├── CONTRIBUTING.md
+├── docs/
+│   ├── installation.md
+│   ├── usage.md
+│   └── api/
+└── src/
+```
+
+# Common pitfalls
+
+## Writing documentation only at the end
+
+Documentation written long after the code is often inaccurate, because details are forgotten or the software has since changed. Writing a few lines while a feature is fresh is faster and more accurate than reconstructing it later.
+
+## Assuming the code speaks for itself
+
+Clear code helps, but it does not tell a new user which command to run first, or a deployer which environment variables are required. Code and documentation answer different questions.
+
+## Letting documentation drift out of sync
+
+When code changes but documentation does not, users follow instructions that no longer work. Treating documentation updates as part of the same change—not a separate task for later—keeps this from accumulating.
+
+## Documenting only one audience
+
+A project with a detailed README but no contribution guide is easy to use but hard to extend. A project with an API reference but no installation instructions is hard to use at all. Covering all three audiences, even briefly, avoids leaving one group stuck.
+
+# Take-away
+
+Good documentation is not one large document—it is a small set of focused documents, each answering the questions a specific audience actually has. Keeping it close to the code and updating it alongside changes is more sustainable than writing it all at once.
+
+# Checklist
+
+- Does your README let a new user install and run the software without reading anything else?
+- Do you document how to set up a reproducible environment?
+- Do you have a contribution guide covering local setup, tests, and review expectations?
+- Are your API docs generated from docstrings rather than maintained separately?
+- Is documentation updated as part of the same change that affects behaviour?
+
+# Related guides
+
+Continue improving your software by exploring:
+
+- [Demo environment](6demo_environment.qmd)
+- [Software engineering quality](3software_engineering_quality.qmd)
+
+# References
+
+::: {#refs}
+:::
