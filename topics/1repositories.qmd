@@ -6,13 +6,6 @@ format:
     toc: true
     toc-depth: 2
     code-fold: true
-nocite: |
-  @esciencecenter-rsd
-  @research-software-directory-org
-  @zenodo
-  @scicodes-participants
-  @choosealicense
-  @opensource-licenses
 ---
 
 ::: {.callout-note}
@@ -59,12 +52,8 @@ This guide assumes that you already have:
 
 - a source code repository (for example GitHub or GitLab);
 - a README describing your software;
-- an open-source license;
+- an open-source license (see [Licensing and compatibility](#licensing-and-compatibility) below if you still need to choose one);
 - a way to create software releases or versions.
-
-A software license defines how others are allowed to use, modify, and redistribute your software. Without a license, others may be able to view your code, but they cannot easily determine what they are permitted to do with it.
-
-If you are unsure which license fits your project, [Choose a License](https://choosealicense.com/) provides an overview of common open-source licenses and helps you select one based on your goals.
 
 If you are still setting up the foundations of your project, see:
 
@@ -116,6 +105,8 @@ For example:
 - Version 1.1 is released later and receives its own identifier.
 - Both versions remain available.
 
+[Zenodo](https://zenodo.org/) is a widely used example: connect a GitHub repository, and every new release is archived automatically and issued its own DOI. See [its documentation](https://help.zenodo.org/docs/github/) for the full setup.
+
 ## Software registries
 
 Software registries describe software using structured metadata.
@@ -129,6 +120,8 @@ Researchers often search for software based on scientific questions rather than 
 - Which tools are available for this biological workflow?
 
 Registries connect these scientific needs with available software.
+
+The [Research Software Directory](https://research-software-directory.org/), built by the [Netherlands eScience Center](https://www.esciencecenter.nl/research-software-directory/), is one example, as is [bio.tools](https://bio.tools/) for the life sciences. For an overview of registries across scientific domains, see the [SciCodes list of participating registries](https://scicodes.net/participants/).
 
 # Licensing and compatibility
 
@@ -158,9 +151,4 @@ Before publishing, check the license of every dependency you rely on, particular
 - copyleft dependencies that may impose obligations on your own license;
 - dependencies with no license at all, which cannot legally be redistributed;
 - dependencies whose license restricts commercial use, if that matters for your project.
-
-# References
-
-::: {#refs}
-:::
 

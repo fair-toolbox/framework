@@ -5,10 +5,6 @@ format:
   html:
     toc: true
     toc-depth: 2
-nocite: |
-  @rsqkit-organising-software-projects
-  @rsqkit-code-review
-  @gfg-software-maintenance
 ---
 
 ::: {.callout-note}
@@ -29,43 +25,19 @@ The guide primarily supports the following FAIR principles:
 
 # Why does software quality matter?
 
-Research software often begins as a solution to a specific scientific problem. As new features are added, collaborators join the project, or the software is reused for other studies, the codebase naturally grows in complexity.
+Research software often begins as a solution to a specific scientific problem, then grows in complexity as features, collaborators, and reuse accumulate. Poor quality rarely breaks it today—it just makes future changes slower, onboarding harder, and bugs harder to find.
 
-Poor software quality rarely prevents software from working today. Instead, it makes future development slower and more error-prone. Small changes become difficult, onboarding new contributors takes longer, and bugs become harder to identify.
-
-Improving software quality is therefore less about writing "perfect" code and more about making future development easier—for collaborators, users, and your future self.
-
----
-
-# What does "software quality" mean?
-
-For research software, software quality can be summarised by one question:
+Software quality can be summarised by one question:
 
 > **Can someone else understand, modify, and trust this software?**
 
-Many aspects contribute to this, including:
-
-- a logical project structure;
-- readable code;
-- consistent coding conventions;
-- collaborative development practices.
-
-This guide focuses on practical improvements that provide long-term benefits without requiring a complete redesign of your software.
+This guide focuses on practical improvements—project structure, readable code, review, incremental change, and long-term maintenance—that move you toward that goal without requiring a complete redesign.
 
 ---
 
 # Principle 1: Organise your project consistently
 
-As projects grow, files tend to accumulate wherever they are needed at the time. While this works initially, it becomes increasingly difficult to understand where functionality lives.
-
-A consistent project structure helps contributors answer questions such as:
-
-- Where is the source code?
-- Where are the tests?
-- Where is the documentation?
-- Where are example datasets?
-
-A typical project structure might look like:
+As projects grow, files tend to accumulate wherever convenient, making it harder to see where functionality lives. A consistent structure answers basic questions for a new contributor: where is the source code, the tests, the documentation, the examples?
 
 ```text
 my-project/
@@ -78,181 +50,75 @@ my-project/
 └── pyproject.toml
 ```
 
-### Good practice
-
-- Separate source code, tests, documentation, and example data.
-- Avoid mixing generated files with source code.
-- Keep configuration files in predictable locations.
+Keep source, tests, documentation, and generated files separated, and keep configuration in predictable locations. See RSQKit's lesson on [software project structure](https://everse.software/RSQKit/software_project_structure) for more examples of project layouts.
 
 ---
 
 # Principle 2: Write code for people
 
-Code is read far more often than it is written. Clear code helps reviewers understand changes, allows collaborators to contribute more easily, and makes future maintenance less frustrating.
+Code is read far more often than it is written. A few habits go a long way:
 
-## Use descriptive names
-
-Instead of:
+**Use descriptive names.**
 
 ```python
-x = load("samples.csv")
+samples = load_samples("samples.csv")   # not: x = load("samples.csv")
 ```
 
-prefer:
-
-```python
-samples = load_samples("samples.csv")
-```
-
-The second example immediately communicates what is being loaded.
-
-## Keep functions focused
-
-Instead of one function that:
-
-- reads input data;
-- filters observations;
-- performs the analysis;
-- exports results;
-
-consider splitting it into smaller functions:
+**Prefer early returns over nested conditionals** ([guard clauses](https://refactoring.guru/replace-nested-conditional-with-guard-clauses)).
 
 ```text
-load_data()
-filter_samples()
-run_analysis()
-export_results()
-```
-
-Smaller functions are easier to understand, reuse, and test.
-
-## Avoid deeply nested logic
-
-Rather than:
-
-```text
-if A
-    if B
-        if C
-            ...
-```
-
-consider returning early:
-
-```text
-if not A:
-    return
-
-if not B:
-    return
-
-if not C:
-    return
-
+if not A: return
+if not B: return
+if not C: return
 ...
 ```
 
-Reducing nesting makes the main logic easier to follow.
+**Keep functions focused**—one clear responsibility each, rather than one function that reads, filters, analyses, and exports.
 
-## Remove unused code
+**Remove unused code** rather than commenting it out—version control already preserves the history.
 
-Instead of leaving code commented out:
-
-```python
-# old_analysis(data)
-# old_plot(results)
-```
-
-remove it completely.
-
-Version control already preserves previous implementations, so commented-out code usually adds clutter rather than useful history.
+See RSQKit's lesson on [writing readable code](https://everse.software/RSQKit/writing_readable_code) for language-specific style guides and tooling (formatters, linters, type checkers) that help enforce these habits automatically.
 
 ---
 
 # Principle 3: Have your code reviewed
 
-Another person will often notice things that you miss. Having your code reviewed is one of the most effective ways to improve software quality before changes become part of your project.
-
-A reviewer may identify:
-
-### Unclear code
-
-> "What does this function actually calculate?"
-
-Clearer names or a short docstring may make the purpose immediately obvious.
-
-### Potential bugs
-
-For example:
-
-- assuming an input file always exists;
-- not checking for missing values;
-- forgetting to handle unexpected input.
-
-### Duplicated logic
-
-Imagine finding the same data-cleaning code in four different files.
-
-A reviewer may suggest moving it into a reusable function so future changes only need to be made once.
-
-### Opportunities to simplify
-
-Twenty lines of custom code may be replaceable by a well-tested library function.
-
-Simpler implementations are often easier to understand and maintain.
+A second pair of eyes catches what you are too close to see: unclear logic, an edge case you didn't consider, duplicated code that should be a shared function, or twenty lines that a well-tested library could replace in one.
 
 ## Automated code review
 
-Automated tools complement human reviewers by identifying common issues before code is merged.
-
-Some widely used examples include:
+Automated tools complement human reviewers by catching mechanical issues before code is merged:
 
 | Tool | Purpose |
 |------|---------|
-| GitHub Pull Requests | Collaborative code review |
-| GitHub Copilot code review | AI-assisted review suggestions |
-| CodeQL | Detect security vulnerabilities and common coding mistakes |
-| Super-Linter | Run multiple linters in one workflow |
-| Ruff (Python) | Fast linting and formatting |
-| Pylint (Python) | Detect programming errors and style issues |
-| lintr (R) | Check R code for style and common issues |
-| clang-tidy (C/C++) | Static analysis for C and C++ |
+| [GitHub Pull Requests](https://docs.github.com/en/pull-requests) | Collaborative code review |
+| [GitHub Copilot code review](https://docs.github.com/en/copilot/using-github-copilot/code-review/using-copilot-code-review) | AI-assisted review suggestions |
+| [CodeQL](https://codeql.github.com/) | Detect security vulnerabilities and common coding mistakes |
+| [Super-Linter](https://github.com/super-linter/super-linter) | Run multiple linters in one workflow |
+| [Ruff](https://docs.astral.sh/ruff/) (Python) | Fast linting and formatting |
+| [Pylint](https://pylint.readthedocs.io/) (Python) | Detect programming errors and style issues |
+| [lintr](https://lintr.r-lib.org/) (R) | Check R code for style and common issues |
+| [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) (C/C++) | Static analysis for C and C++ |
 
-Automated tools provide rapid feedback but cannot judge whether code is understandable or whether an implementation is appropriate for a scientific problem.
-
-Whenever possible, combine automated checks with human code review.
+Automated tools are fast but cannot judge whether an implementation fits the scientific problem—combine them with human review. See RSQKit's lesson on [code review](https://everse.software/RSQKit/code_review) for how to run an effective review process.
 
 ---
 
 # Principle 4: Improve your software incrementally
 
-Research software evolves alongside research questions. Large rewrites are rarely practical, but small improvements can be incorporated into everyday development.
+Research software evolves alongside the research questions behind it. Large rewrites are rarely practical, but small improvements fit naturally into everyday work:
 
-### While fixing a bug
+- fixing a bug is a chance to also clarify the function around it;
+- adding a feature is a chance to move related logic into its own module before it gets crowded;
+- reviewing code is a chance to flag a missing docstring or unclear name, not just the issue at hand.
 
-Suppose you discover a bug in a function that has become difficult to read.
-
-Rather than only fixing the bug, split the function into two smaller functions with clearer names. Future contributors will benefit immediately.
-
-### While adding a feature
-
-You add support for a new file format.
-
-Instead of extending an already crowded module, move all file-reading functionality into a dedicated module. Future additions become easier to implement.
-
-### While reviewing code
-
-During a code review, you realise that a function lacks a docstring.
-
-Adding a short description of its inputs and outputs helps future developers understand how the function should be used.
-
-Small improvements accumulate over time and are much easier to maintain than occasional large refactoring efforts.
+These small improvements accumulate, and are far easier to sustain than occasional large refactoring efforts. See RSQKit's lesson on [maintaining research software](https://everse.software/RSQKit/software_maintenance) for concrete ways to track technical debt, such as issue-tracker labels and protected refactoring time.
 
 ---
 
 # Principle 5: Plan for long-term maintenance
 
-Research software often outlives the project that funded it. Dependencies age, platforms change, and the person who understood the code best may move to a different position before the software stops being used.
+Research software often outlives the project that funded it. Dependencies age, platforms change, and the person who understood the code best may move on before the software stops being used.
 
 Maintenance work generally falls into a few recurring categories:
 
@@ -265,10 +131,10 @@ Maintenance work generally falls into a few recurring categories:
 
 Two habits make this manageable rather than overwhelming:
 
-- **Pin and periodically update dependencies.** Unpinned dependencies can silently break your software when a new release changes behaviour; pinning avoids surprises, but only if you also revisit those pins occasionally rather than never.
-- **Be explicit about maintenance status.** If a project is no longer actively maintained, say so in the README. This is far more useful to future users than letting them discover it through unanswered issues.
+- **Pin and periodically update dependencies.** Unpinned dependencies can silently break your software when a new release changes behaviour; pinning avoids surprises, but only if you also revisit those pins occasionally rather than never. See RSQKit's lesson on [maintaining research software](https://everse.software/RSQKit/software_maintenance) for language-appropriate pinning tools.
+- **Be explicit about maintenance status.** If a project is no longer actively maintained, say so in the README—far more useful to future users than letting them discover it through unanswered issues. [repostatus.org](https://www.repostatus.org/) provides a standard set of badges for declaring this.
 
-Maintenance is easiest when it is planned for, rather than treated as an emergency once something breaks.
+See this [overview of software maintenance types](https://www.geeksforgeeks.org/software-engineering/software-engineering-software-maintenance/) for more detail on the categories above.
 
 ---
 
@@ -276,29 +142,21 @@ Maintenance is easiest when it is planned for, rather than treated as an emergen
 
 ## Optimising too early
 
-Premature optimisation often makes code more difficult to understand.
-
-Write code that is correct and maintainable first. Optimise performance only when measurements show that it is necessary.
+[Premature optimisation](https://en.wikipedia.org/wiki/Program_optimization) often makes code more difficult to understand. Write code that is correct and maintainable first, and optimise only when measurements show it is necessary.
 
 ## Chasing perfect architecture
 
-Research software evolves alongside research questions.
-
-Design your software so that it can change rather than trying to anticipate every future requirement.
+Research software evolves alongside research questions. Design your software so that it can change, rather than trying to anticipate every future requirement—the [YAGNI principle](https://martinfowler.com/bliki/Yagni.html) ("You Aren't Gonna Need It").
 
 ## Ignoring technical debt
 
-Shortcuts are sometimes necessary, but they should be recognised and revisited.
-
-Leaving temporary solutions in place indefinitely often makes future development more difficult.
+Shortcuts are sometimes necessary, but leaving them in place indefinitely, unrecognised, makes future development more difficult. See Martin Fowler's [explanation of technical debt](https://martinfowler.com/bliki/TechnicalDebt.html) for how to reason about when a shortcut is acceptable. For a nice read on where the metaphor came from and how it's often misused in practice, see ["Technical Debt: The Man, the Metaphor, the Message"](https://neopragma.com/2019/03/technical-debt-the-man-the-metaphor-the-message/).
 
 ---
 
 # Take-away
 
 Maintainable software is not the result of one large refactoring effort. It is the result of many small decisions that make code easier to understand, modify, and review—and of planning for the maintenance that continues long after the initial development is done.
-
-Improving your software incrementally helps future collaborators—and your future self—work more effectively.
 
 ---
 
@@ -327,8 +185,3 @@ Continue improving your software by exploring:
 - [Documenting research software](4documentation.qmd)
 - [Versioning and packaging research software](5version_control_and_packaging.qmd)
 - [Improving workflows](9improving_workflows.qmd)
-
-# References
-
-::: {#refs}
-:::
