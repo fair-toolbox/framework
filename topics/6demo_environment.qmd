@@ -1,5 +1,106 @@
 ---
-title: demo environment 
+title: "Providing a Demo Environment"
+subtitle: "Letting others try your software before they install it"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
 ---
 
-Coming soon; this is a placeholder.
+::: {.callout-note}
+## FAIR contribution
+
+The guide primarily supports the following FAIR principles:
+
+**Accessible**
+
+- A live demo lets people run your software without installing anything first.
+
+**Reusable**
+
+- Trying the software before adopting it lowers the barrier to deciding whether it actually fits someone's needs.
+
+:::
+
+# Why provide a demo environment?
+
+Installing unfamiliar software is a real cost: dependencies, versions, and platform quirks all have to line up before someone can even see what the software does. Many potential users will give up before that point, not because the software is bad, but because trying it looked like too much work.
+
+A demo environment removes that cost. It gives someone a working copy of your software—preloaded with example data—that they can run immediately, in a browser or with a single command, without setting anything up themselves.
+
+# Principle 1: Package a reproducible environment
+
+A demo is only as reliable as the environment it runs in. Containers bundle your software with its exact dependencies, so it runs the same way regardless of what is already installed on the host machine.
+
+```text
+my-project/
+├── Dockerfile
+├── requirements.txt
+└── src/
+```
+
+Docker is the common choice for general use; Apptainer is often preferred on shared HPC systems. Either way, this container is also the foundation your demo is built on top of—see RSQKit's lesson on [using containers](https://everse.software/RSQKit/using_containers) for a closer look at building and running one.
+
+# Principle 2: Make the demo runnable without local setup
+
+A container still needs somewhere to run. Interactive, browser-based platforms remove that last step entirely:
+
+| Platform | What it does |
+|---|---|
+| [Binder](https://mybinder.org/) | Turns a GitHub repository with an environment file into a live, runnable Jupyter environment, with no installation |
+| [Google Colab](https://colab.research.google.com/) | Runs a single notebook in the browser, with common scientific packages preinstalled |
+| [GitHub Codespaces](https://docs.github.com/en/codespaces) | Launches a full, container-based development environment directly from a repository |
+| [Hugging Face Spaces](https://huggingface.co/spaces) | Hosts a small interactive app (for example a Streamlit or Gradio interface) directly from a repository |
+
+Binder is built on the same container technology as Principle 1: it runs [repo2docker](https://repo2docker.readthedocs.io/) under the hood to build an image from your repository's environment file automatically, so you do not need to maintain the Binder configuration separately from the environment you already define for reproducibility. See RSQKit's lesson on [reproducible software environments](https://everse.software/RSQKit/reproducible_software_environments) for how that environment file should be structured.
+
+# Principle 3: Include example data and a guided walkthrough
+
+An empty environment does not demonstrate anything. A useful demo ships with:
+
+- a small example dataset, realistic enough to show genuine behaviour;
+- a short notebook or script that runs an end-to-end example, from input to result;
+- brief comments explaining what each step does and why.
+
+This overlaps with the quick-start example expected in a good README—see [Documenting research software](4documentation.qmd)—but a demo environment lets someone run that example immediately, rather than copying commands into their own setup first.
+
+# Principle 4: Keep the demo synced with releases
+
+A demo environment that quietly falls behind the current release is worse than no demo: it shows outdated behaviour and misleads anyone evaluating the software.
+
+- Pin the demo to a specific, recent release rather than an untracked branch.
+- Update the demo (or its pinned version) as part of your normal release process, not as an afterthought.
+- If the demo depends on an external service, check periodically that it still starts up cleanly.
+
+# Common pitfalls
+
+## The "demo" still requires manual setup
+
+A demo that asks users to install dependencies or configure paths before it runs has not actually removed the barrier it was meant to remove.
+
+## Letting the demo go stale
+
+A container or Binder link that has not been rebuilt in over a year often fails outright, as base images and dependencies move on. An unmaintained demo damages trust faster than having no demo at all.
+
+## No example data included
+
+A demo environment with no data to run against only shows that the software starts—not what it actually does.
+
+# Take-away
+
+A demo environment turns "try installing this to see if it works for you" into "click this link and see it work." Building it on the same container you use for reproducibility, and keeping it in sync with your releases, keeps that promise from quietly becoming false.
+
+# Checklist
+
+- Can someone run your software without installing anything locally?
+- Is the demo built on the same reproducible environment definition you use elsewhere?
+- Does the demo include example data and a short guided walkthrough?
+- Is the demo pinned to a recent release, and updated as part of your release process?
+
+# Related guides
+
+Continue improving your software by exploring:
+
+- [Documenting research software](4documentation.qmd)
+- [Versioning and packaging research software](5version_control_and_packaging.qmd)

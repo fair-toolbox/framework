@@ -6,13 +6,6 @@ format:
     toc: true
     toc-depth: 2
     code-fold: true
-nocite: |
-  @rsqkit-documenting-software
-  @rsqkit-documenting-software-readthedocs
-  @rsqkit-software-documentation
-  @rsqkit-reproducible-software-environments
-  @gfg-software-deployment
-  @rsqkit-code-review
 ---
 
 ::: {.callout-note}
@@ -50,7 +43,7 @@ Before writing documentation, it helps to be clear about who it is for.
 | Deployers | "How do I run this reliably in my environment?" | Deployment guide, environment/dependency specification |
 | Developers | "How do I understand, modify, or contribute to this?" | Architecture overview, API reference, contribution guide |
 
-A single document rarely serves all three well. A README that tries to be a full API reference becomes overwhelming for a first-time user, while a README that only shows a one-line install command leaves contributors without the context they need.
+A single document rarely serves all three well. A README that tries to be a full API reference becomes overwhelming for a first-time user, while a README that only shows a one-line install command leaves contributors without the context they need. RSQKit's lesson on [documenting a software project](https://everse.software/RSQKit/documenting_software_project) walks through this distinction in more depth.
 
 # Principle 2: Start with a strong README
 
@@ -83,7 +76,7 @@ This usually means documenting:
 - any external services or data the software depends on;
 - configuration needed before first use.
 
-Reproducible environments matter because "works on my machine" is not useful information to a deployer. Pinning dependency versions and providing a single command to recreate the environment removes most of the guesswork.
+Reproducible environments matter because "works on my machine" is not useful information to a deployer. Pinning dependency versions and providing a single command to recreate the environment removes most of the guesswork. See RSQKit's lesson on [reproducible software environments](https://everse.software/RSQKit/reproducible_software_environments) and this [overview of software deployment](https://www.geeksforgeeks.org/software-engineering/software-deployment-in-software-development/) for more detail.
 
 # Principle 4: Document for contributors
 
@@ -94,14 +87,14 @@ Developer documentation lowers the barrier for someone other than you to safely 
 - how to run the test suite;
 - expectations for code review before a change is merged.
 
-A `CONTRIBUTING.md` file is a natural place to collect this. It does not need to be long—pointing contributors to the right commands and expectations is usually enough.
+A `CONTRIBUTING.md` file is a natural place to collect this. It does not need to be long—pointing contributors to the right commands and expectations is usually enough. If you document review expectations, RSQKit's lesson on [code review](https://everse.software/RSQKit/code_review) is a useful reference.
 
 # Principle 5: Keep documentation close to the code
 
 Documentation that lives far from the code it describes tends to fall out of date. Two practices help keep it current:
 
 - **Docstrings and inline comments** describe individual functions where they are defined, so documentation changes alongside the code.
-- **Generated API references** (for example using Sphinx or Read the Docs) build user-facing documentation directly from docstrings, instead of duplicating that information by hand.
+- **Generated API references** (for example using Sphinx or [Read the Docs](https://everse.software/RSQKit/documenting_software_readthedocs)) build user-facing documentation directly from docstrings, instead of duplicating that information by hand. RSQKit's lesson on [software documentation](https://everse.software/RSQKit/software_documentation) covers the tooling in more detail.
 
 A typical layout keeps documentation organised without separating it too far from the code:
 
@@ -152,8 +145,3 @@ Continue improving your software by exploring:
 
 - [Demo environment](6demo_environment.qmd)
 - [Software engineering quality](3software_engineering_quality.qmd)
-
-# References
-
-::: {#refs}
-:::
