@@ -6,10 +6,6 @@ format:
     toc: true
     toc-depth: 2
     code-fold: true
-nocite: |
-  @rsqkit-citing-software
-  @rsqkit-software-identifiers
-  @rsqkit-software-metadata
 ---
 
 ::: {.callout-note}
@@ -50,7 +46,7 @@ date-released: 2026-01-15
 doi: 10.5281/zenodo.1234567
 ```
 
-Keep it updated when authors, the version, or the DOI change—an outdated `CITATION.cff` is misleading rather than merely incomplete.
+Keep it updated when authors, the version, or the DOI change—an outdated `CITATION.cff` is misleading rather than merely incomplete. See RSQKit's lesson on [citing software](https://everse.software/RSQKit/citing_software) for more on the format and conventions.
 
 # Principle 2: Archive a citable version with a DOI
 
@@ -62,7 +58,7 @@ Zenodo integrates directly with GitHub: once connected, creating a GitHub Releas
 
 `CITATION.cff` tells a human how to cite your software. `codemeta.json` describes it in a structured, machine-readable format—covering things like programming language, dependencies, and related publications.
 
-This metadata is what lets software registries and search tools index and surface your software automatically, rather than relying on someone finding it by chance.
+This metadata is what lets software registries and search tools index and surface your software automatically, rather than relying on someone finding it by chance. See RSQKit's lesson on [software metadata](https://everse.software/RSQKit/software_metadata) for more on what to include.
 
 # Principle 4: Use identifiers consistently
 
@@ -72,7 +68,7 @@ Citation depends on identifiers matching up wherever your software is referenced
 - a DOI for each archived release;
 - the same repository URL and version number across your README, `CITATION.cff`, and any registry entries.
 
-Inconsistent identifiers across these places make it harder for citation tools, and for people, to confirm they are citing the right thing.
+Inconsistent identifiers across these places make it harder for citation tools, and for people, to confirm they are citing the right thing. See RSQKit's lesson on [software identifiers](https://everse.software/RSQKit/software_identifiers) for a broader overview.
 
 # Common pitfalls
 
@@ -105,8 +101,3 @@ Continue improving your software by exploring:
 
 - [Publishing research software](1repositories.qmd)
 - [Versioning and packaging research software](5version_control_and_packaging.qmd)
-
-# References
-
-::: {#refs}
-:::

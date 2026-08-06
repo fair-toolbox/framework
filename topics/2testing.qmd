@@ -6,11 +6,6 @@ format:
     toc: true
     toc-depth: 2
     code-fold: true
-nocite: |
-  @rsqkit-ci-cd
-  @rsqkit-testing-software
-  @rsqkit-task-automation-github-actions
-  @gfg-software-testing-tutorial
 ---
 
 ::: {.callout-note}
@@ -31,7 +26,7 @@ Research software is used to produce results that other people rely on. When a c
 
 Manually re-checking your code after every change does not scale. As a project grows, it becomes impractical to verify by hand that everything still works. Automated tests let you make changes with confidence, because you find out immediately whether existing behaviour is preserved.
 
-This guide focuses on building a testing *infrastructure*—the pipeline that runs your tests automatically—rather than teaching a specific testing framework. The same ideas apply whether you use pytest, testthat, JUnit, or another tool.
+This guide focuses on building a testing *infrastructure*—the pipeline that runs your tests automatically—rather than teaching a specific testing framework. The same ideas apply whether you use pytest, testthat, JUnit, or another tool. For a broader overview of testing concepts and terminology, see this [software testing tutorial](https://www.geeksforgeeks.org/software-testing/software-testing-tutorial/).
 
 # Principle 1: Automate your tests
 
@@ -45,7 +40,7 @@ function test_average():
 
 Start with the functions that matter most: the ones your results depend on, or the ones that have broken before. You do not need to test everything before testing becomes useful.
 
-Automated tests only pay off if they are run consistently—not just when you remember to. That is the role of continuous integration.
+Automated tests only pay off if they are run consistently—not just when you remember to. That is the role of continuous integration. See RSQKit's lesson on [testing software](https://everse.software/RSQKit/testing_software) for a closer look at testing strategies.
 
 # Principle 2: Run tests automatically with CI
 
@@ -76,7 +71,7 @@ jobs:
         run: pytest
 ```
 
-Once this file is added under `.github/workflows/`, every push and pull request triggers the tests automatically, and the result is visible directly on GitHub.
+Once this file is added under `.github/workflows/`, every push and pull request triggers the tests automatically, and the result is visible directly on GitHub. See RSQKit's lessons on [CI/CD](https://everse.software/RSQKit/ci_cd) and [task automation with GitHub Actions](https://everse.software/RSQKit/task_automation_github_actions) for more detail.
 
 # Principle 3: Structure your tests for growth
 
@@ -134,8 +129,3 @@ Continue improving your software by exploring:
 
 - [Version control and packaging](5version_control_and_packaging.qmd)
 - [Software engineering quality](3software_engineering_quality.qmd)
-
-# References
-
-::: {#refs}
-:::

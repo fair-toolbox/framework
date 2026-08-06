@@ -6,13 +6,6 @@ format:
     toc: true
     toc-depth: 2
     code-fold: true
-nocite: |
-  @rsqkit-software-identifiers
-  @rsqkit-using-version-control
-  @swcarpentry-git-novice
-  @turingway-vcs
-  @rsqkit-packaging-releasing-software
-  @rsqkit-releasing-software
 ---
 
 ::: {.callout-note}
@@ -35,7 +28,7 @@ The guide primarily supports the following FAIR principles:
 
 Code in a repository changes constantly. That is fine for development, but it is a problem the moment someone else needs to depend on your software—install it, cite it, or reproduce a result that used it. "The latest version on the main branch" is not a stable thing to point to.
 
-Versioning and packaging solve this by turning a moving target into something others can reliably install, reference, and build on. This guide assumes you already use version control day-to-day; it focuses specifically on how to turn commits into releases people can depend on.
+Versioning and packaging solve this by turning a moving target into something others can reliably install, reference, and build on. This guide assumes you already use version control day-to-day; it focuses specifically on how to turn commits into releases people can depend on. If you need a refresher on version control itself, see [Version Control with Git](https://swcarpentry.github.io/git-novice) (Software Carpentry), [The Turing Way's chapter on version control](https://book.the-turing-way.org/reproducible-research/vcs), or RSQKit's lesson on [using version control](https://everse.software/RSQKit/using_version_control).
 
 # Principle 1: Use semantic versioning
 
@@ -47,7 +40,7 @@ Semantic versioning (SemVer) gives version numbers a shared meaning, in the form
 | MINOR | You add functionality in a backwards-compatible way |
 | PATCH | You fix a bug without changing behaviour otherwise |
 
-A user who sees a MINOR version bump knows they can upgrade safely. A MAJOR bump tells them to check for breaking changes first. This shared meaning is what makes version numbers useful information rather than an arbitrary counter.
+A user who sees a MINOR version bump knows they can upgrade safely. A MAJOR bump tells them to check for breaking changes first. This shared meaning is what makes version numbers useful information rather than an arbitrary counter. See RSQKit's lesson on [software identifiers](https://everse.software/RSQKit/software_identifiers) for how version numbers fit into the broader picture of identifying software.
 
 # Principle 2: Tag your releases
 
@@ -58,13 +51,13 @@ git tag -a v1.0.0 -m "First stable release"
 git push origin v1.0.0
 ```
 
-On GitHub, pushing a tag can also be turned into a formal Release, with release notes attached. This gives every version a permanent, citable reference—unlike a branch name or commit on `main`, which keeps moving.
+On GitHub, pushing a tag can also be turned into a formal Release, with release notes attached. This gives every version a permanent, citable reference—unlike a branch name or commit on `main`, which keeps moving. See RSQKit's lesson on [releasing software](https://everse.software/RSQKit/releasing_software) for more on structuring this process.
 
 # Principle 3: Package your software for distribution
 
 Packaging bundles your code together with the metadata needed to install it—its name, version, and dependencies—so others can install it with a single command instead of cloning and configuring it by hand.
 
-Most ecosystems have a standard packaging format: `pip`/PyPI for Python, CRAN or Bioconductor for R, npm for JavaScript. The details differ, but the goal is the same: a minimal metadata file describing your package, and a build step that turns your source code into an installable artifact.
+Most ecosystems have a standard packaging format: `pip`/PyPI for Python, CRAN or Bioconductor for R, npm for JavaScript. The details differ, but the goal is the same: a minimal metadata file describing your package, and a build step that turns your source code into an installable artifact. See RSQKit's lesson on [packaging software](https://everse.software/RSQKit/packaging_software) for a closer look.
 
 A minimal Python example (`pyproject.toml`):
 
@@ -121,8 +114,3 @@ Continue improving your software by exploring:
 
 - [Testing research software](2testing.qmd)
 - [Making research software citable](10citations.qmd)
-
-# References
-
-::: {#refs}
-:::

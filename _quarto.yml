@@ -3,7 +3,6 @@ project:
 
 title: "TDCC Fairtools Framework" # change me
 theme: code-cafe.scss
-bibliography: references.bib
 
 website:
   navbar:
