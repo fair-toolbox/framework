@@ -1,5 +1,71 @@
 ---
-title: uplifting 
+title: "Uplifting Your Research Software"
+subtitle: "Working through the FAIR principles, one topic at a time"
+page-layout: full
 ---
 
-Coming soon; Information about uplifting.
+::: {.page-intro}
+Research software is a scientific output in its own right, but it doesn't become Findable, Accessible, Interoperable, or Reusable by accident. Each of the topics below breaks the FAIR principles down into a concrete area of practice—repositories, testing, documentation, and so on—with practical guidance on what to change and why it matters.
+
+You don't need to work through them in order. If one of the sentences below sounds familiar, that topic is a good place to start.
+:::
+
+## Topics
+
+```{=html}
+<div class="topic-grid">
+
+<a class="topic-card" href="topics/1repositories.html">
+<h4>1. Repositories, Registries, and Archiving</h4>
+<p>Your code lives in a repository, but no one outside your team can find it, cite a specific version of it, or be sure it will still be there next year.</p>
+</a>
+
+<a class="topic-card" href="topics/2testing.html">
+<h4>2. Testing</h4>
+<p>You're not fully sure whether your last change quietly broke something that used to work.</p>
+</a>
+
+<a class="topic-card" href="topics/3software_engineering_quality.html">
+<h4>3. Software Engineering Quality</h4>
+<p>New contributors—including future you—struggle to understand, trust, or safely change the codebase.</p>
+</a>
+
+<a class="topic-card" href="topics/4documentation.html">
+<h4>4. Documentation</h4>
+<p>People keep asking you how to install or use your software instead of finding out for themselves.</p>
+</a>
+
+<a class="topic-card" href="topics/5version_control_and_packaging.html">
+<h4>5. Version Control and Packaging</h4>
+<p>There's no reliable way to say "this exact version is what produced the results in the paper."</p>
+</a>
+
+<a class="topic-card" href="topics/6demo_environment.html">
+<h4>6. Demo Environment</h4>
+<p>Anyone curious about your software has to install it first just to see what it does.</p>
+</a>
+
+<a class="topic-card" href="topics/7GUI.html">
+<h4>7. Graphical User Interface</h4>
+<p>Your software only reaches people who are comfortable working from a command line.</p>
+<span class="topic-status">Coming soon</span>
+</a>
+
+<a class="topic-card" href="topics/8interoperability.html">
+<h4>8. Interoperability</h4>
+<p>Your tool works fine on its own, but plugging it into a pipeline with other tools means custom glue code every time.</p>
+</a>
+
+<a class="topic-card" href="topics/9improving_workflows.html">
+<h4>9. Improving Workflows</h4>
+<p>Reproducing an analysis end-to-end still means remembering the right sequence of manual steps.</p>
+<span class="topic-status">Coming soon</span>
+</a>
+
+<a class="topic-card" href="topics/10citations.html">
+<h4>10. Citations</h4>
+<p>People use your software in their papers but never cite it—or cite the wrong version.</p>
+</a>
+
+</div>
+```

@@ -35,3 +35,67 @@ h4 {
 .btn {
   border: 2pt solid $color2;
 }
+
+.page-intro {
+  max-width: 46rem;
+  margin-bottom: 1.5rem;
+}
+
+// page-layout: full still pins .content to Quarto's default article width
+// (its .column-page grid span loses the cascade tie to .content), so widen
+// it explicitly for any page opting into the full layout.
+body.fullcontent .page-columns .content {
+  grid-column: screen-start / screen-end !important;
+  max-width: min(1400px, 92vw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .topic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.topic-card {
+  display: block;
+  height: 100%;
+  border: 2pt solid $color2;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 0 1.25rem 1rem;
+  background-color: $white;
+  color: $black;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.topic-card:hover {
+  border-color: $color3;
+  transform: translateY(-2px);
+}
+
+.topic-card h4 {
+  margin: 0 -1.25rem 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background-color: rgba($color2, 0.15);
+}
+
+.topic-card p {
+  margin-bottom: 0.25rem;
+  color: $black;
+}
+
+.topic-card .topic-status {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: $color3;
+}

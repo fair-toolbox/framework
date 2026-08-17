@@ -1,0 +1,32 @@
+---
+title: "activities"
+subtitle: "Events and outreach supporting the FAIR framework"
+page-layout: full
+---
+
+::: {.page-intro}
+Coming soon; a short description of the activities organised around this framework.
+:::
+
+## Activities
+
+```{=html}
+<div class="topic-grid">
+
+<a class="topic-card" href="#">
+<h4>Licensing Outreach</h4>
+<p>Coming soon.</p>
+</a>
+
+<a class="topic-card" href="#">
+<h4>Hackathon 1</h4>
+<p>Coming soon.</p>
+</a>
+
+<a class="topic-card" href="#">
+<h4>Hackathon 2</h4>
+<p>Coming soon.</p>
+</a>
+
+</div>
+```

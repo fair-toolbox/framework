@@ -34,4 +34,5 @@ website:
           - text: 10. citations
             href: topics/10citations.qmd
 
+      - href: activities.qmd
       - href: about.qmd
