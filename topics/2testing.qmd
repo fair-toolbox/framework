@@ -97,31 +97,9 @@ Complete test coverage is rarely realistic for research software, and waiting fo
 
 Over time, this incremental approach builds meaningful coverage around the parts of the software that matter most, without requiring a dedicated testing effort.
 
-# Common pitfalls
-
-## Waiting for "enough" coverage
-
-Aiming for complete coverage before adding any tests often means no tests get written at all. A few tests around critical functionality are more valuable than a perfect suite that never gets started.
-
-## Only running tests locally
-
-Tests that are not run in CI depend on every contributor remembering to run them before pushing changes. Sooner or later, someone won't, and a regression reaches the main branch.
-
-## Ignoring failing tests
-
-A failing test that gets ignored for "just this once" tends to stay broken. Once a test suite is known to be unreliable, it stops being trusted—and stops being useful.
-
 # Take-away
 
 Testing research software is not about achieving perfect coverage. It is about building enough automated checks, run consistently through CI, that you can change your code without wondering what you might have broken.
-
-# Checklist
-
-- Do your most important functions or analyses have automated tests?
-- Do your tests run automatically on every push or pull request?
-- Are your tests kept in a dedicated, discoverable location?
-- Do you add a test whenever you fix a bug or add a feature?
-- Are failing tests addressed rather than ignored?
 
 # Related guides
 

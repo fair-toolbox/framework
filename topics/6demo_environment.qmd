@@ -73,30 +73,9 @@ A demo environment that quietly falls behind the current release is worse than n
 - Update the demo (or its pinned version) as part of your normal release process, not as an afterthought.
 - If the demo depends on an external service, check periodically that it still starts up cleanly.
 
-# Common pitfalls
-
-## The "demo" still requires manual setup
-
-A demo that asks users to install dependencies or configure paths before it runs has not actually removed the barrier it was meant to remove.
-
-## Letting the demo go stale
-
-A container or Binder link that has not been rebuilt in over a year often fails outright, as base images and dependencies move on. An unmaintained demo damages trust faster than having no demo at all.
-
-## No example data included
-
-A demo environment with no data to run against only shows that the software starts—not what it actually does.
-
 # Take-away
 
 A demo environment turns "try installing this to see if it works for you" into "click this link and see it work." Building it on the same container you use for reproducibility, and keeping it in sync with your releases, keeps that promise from quietly becoming false.
-
-# Checklist
-
-- Can someone run your software without installing anything locally?
-- Is the demo built on the same reproducible environment definition you use elsewhere?
-- Does the demo include example data and a short guided walkthrough?
-- Is the demo pinned to a recent release, and updated as part of your release process?
 
 # Related guides
 

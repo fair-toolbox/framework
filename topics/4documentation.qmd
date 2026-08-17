@@ -109,35 +109,9 @@ my-project/
 └── src/
 ```
 
-# Common pitfalls
-
-## Writing documentation only at the end
-
-Documentation written long after the code is often inaccurate, because details are forgotten or the software has since changed. Writing a few lines while a feature is fresh is faster and more accurate than reconstructing it later.
-
-## Assuming the code speaks for itself
-
-Clear code helps, but it does not tell a new user which command to run first, or a deployer which environment variables are required. Code and documentation answer different questions.
-
-## Letting documentation drift out of sync
-
-When code changes but documentation does not, users follow instructions that no longer work. Treating documentation updates as part of the same change—not a separate task for later—keeps this from accumulating.
-
-## Documenting only one audience
-
-A project with a detailed README but no contribution guide is easy to use but hard to extend. A project with an API reference but no installation instructions is hard to use at all. Covering all three audiences, even briefly, avoids leaving one group stuck.
-
 # Take-away
 
 Good documentation is not one large document—it is a small set of focused documents, each answering the questions a specific audience actually has. Keeping it close to the code and updating it alongside changes is more sustainable than writing it all at once.
-
-# Checklist
-
-- Does your README let a new user install and run the software without reading anything else?
-- Do you document how to set up a reproducible environment?
-- Do you have a contribution guide covering local setup, tests, and review expectations?
-- Are your API docs generated from docstrings rather than maintained separately?
-- Is documentation updated as part of the same change that affects behaviour?
 
 # Related guides
 

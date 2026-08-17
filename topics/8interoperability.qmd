@@ -67,30 +67,9 @@ flowchart LR
 
 Workflow managers such as [Snakemake](https://snakemake.readthedocs.io/), [Nextflow](https://www.nextflow.io/), and the [Common Workflow Language (CWL)](https://www.commonwl.org/) expect tools to behave predictably from the command line: clear inputs and outputs, and no interactive prompts or hidden state. Registries like [WorkflowHub](https://workflowhub.eu/) and [nf-core](https://nf-co.re/) also make it easier for others to discover pipelines that already use your tool, or to build one that does. See RSQKit's lesson on [computational workflows](https://everse.software/RSQKit/computational_workflows) for how to choose and document a workflow system.
 
-# Common pitfalls
-
-## Inventing a format when a standard exists
-
-A custom format usually solves a narrow problem while creating a much broader one: every downstream tool now needs code written specifically to read it.
-
-## Hard-coding assumptions that block composition
-
-Absolute file paths, interactive prompts, or output written only to a fixed location all make a tool harder to slot into someone else's pipeline, even if the format it reads and writes is otherwise standard.
-
-## Leaving inputs and outputs undocumented
-
-Without a documented schema or metadata describing what a tool expects and produces, other tools—and other people—can only find out by trial and error.
-
 # Take-away
 
 Interoperability is less about any single feature and more about not making unnecessary custom choices: standard formats instead of a bespoke one, standard interfaces instead of a special one, and metadata that describes both in a form other tools can read. Each of these is what lets your software become one piece of a larger pipeline instead of an isolated dead end.
-
-# Checklist
-
-- Do you use open, standard formats for input and output data wherever one exists?
-- Do your command-line tools or APIs follow standard conventions (stdin/stdout and exit codes, or REST and OpenAPI)?
-- Is your software described with machine-readable metadata (for example CodeMeta or a domain ontology)?
-- Can your software be used as a step in a workflow manager without a special wrapper?
 
 # Related guides
 

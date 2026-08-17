@@ -70,30 +70,9 @@ Citation depends on identifiers matching up wherever your software is referenced
 
 Inconsistent identifiers across these places make it harder for citation tools, and for people, to confirm they are citing the right thing. See RSQKit's lesson on [software identifiers](https://everse.software/RSQKit/software_identifiers) for a broader overview.
 
-# Common pitfalls
-
-## No citation guidance at all
-
-Without a `CITATION.cff` or equivalent, users are left guessing how to cite your work—and many will simply skip it, so contributors get no credit for their effort.
-
-## Citing the repository instead of a version
-
-Pointing to the live GitHub URL rather than an archived, versioned DOI means the citation does not pin down which version of the software was actually used.
-
-## Letting citation metadata go stale
-
-An author list or DOI that is not updated after a new release quietly misattributes credit, or points to an outdated version.
-
 # Take-away
 
 Making software citable is a small amount of upfront work: a `CITATION.cff` file, an archived release with a DOI, and consistent identifiers. In return, users know exactly how to credit your work, and contributors get the academic recognition their software deserves.
-
-# Checklist
-
-- Does your repository include a `CITATION.cff` file?
-- Is at least one release archived with a persistent DOI?
-- Do you have structured metadata (for example `codemeta.json`) describing your software?
-- Are author and version identifiers consistent across your README, citation file, and any registries?
 
 # Related guides
 

@@ -152,3 +152,16 @@ Before publishing, check the license of every dependency you rely on, particular
 - dependencies with no license at all, which cannot legally be redistributed;
 - dependencies whose license restricts commercial use, if that matters for your project.
 
+# Take-away
+
+Publishing your source code is a starting point, not an end point. Software becomes findable, accessible, and reusable once it is also archived with a persistent identifier, indexed in a registry researchers actually search, and released under a license that makes its reuse conditions explicit.
+
+# Related guides
+
+Continue improving your software by exploring:
+
+- [Software engineering quality](3software_engineering_quality.qmd)
+- [Versioning and packaging research software](5version_control_and_packaging.qmd)
+- [Documenting research software](4documentation.qmd)
+- [Making research software citable](10citations.qmd)
+

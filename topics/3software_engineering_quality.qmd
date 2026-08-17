@@ -5,6 +5,7 @@ format:
   html:
     toc: true
     toc-depth: 2
+    code-fold: true
 ---
 
 ::: {.callout-note}
@@ -33,8 +34,6 @@ Software quality can be summarised by one question:
 
 This guide focuses on practical improvements—project structure, readable code, review, incremental change, and long-term maintenance—that move you toward that goal without requiring a complete redesign.
 
----
-
 # Principle 1: Organise your project consistently
 
 As projects grow, files tend to accumulate wherever convenient, making it harder to see where functionality lives. A consistent structure answers basic questions for a new contributor: where is the source code, the tests, the documentation, the examples?
@@ -51,8 +50,6 @@ my-project/
 ```
 
 Keep source, tests, documentation, and generated files separated, and keep configuration in predictable locations. See RSQKit's lesson on [software project structure](https://everse.software/RSQKit/software_project_structure) for more examples of project layouts.
-
----
 
 # Principle 2: Write code for people
 
@@ -79,8 +76,6 @@ if not C: return
 
 See RSQKit's lesson on [writing readable code](https://everse.software/RSQKit/writing_readable_code) for language-specific style guides and tooling (formatters, linters, type checkers) that help enforce these habits automatically.
 
----
-
 # Principle 3: Have your code reviewed
 
 A second pair of eyes catches what you are too close to see: unclear logic, an edge case you didn't consider, duplicated code that should be a shared function, or twenty lines that a well-tested library could replace in one.
@@ -102,8 +97,6 @@ Automated tools complement human reviewers by catching mechanical issues before 
 
 Automated tools are fast but cannot judge whether an implementation fits the scientific problem—combine them with human review. See RSQKit's lesson on [code review](https://everse.software/RSQKit/code_review) for how to run an effective review process.
 
----
-
 # Principle 4: Improve your software incrementally
 
 Research software evolves alongside the research questions behind it. Large rewrites are rarely practical, but small improvements fit naturally into everyday work:
@@ -113,8 +106,6 @@ Research software evolves alongside the research questions behind it. Large rewr
 - reviewing code is a chance to flag a missing docstring or unclear name, not just the issue at hand.
 
 These small improvements accumulate, and are far easier to sustain than occasional large refactoring efforts. See RSQKit's lesson on [maintaining research software](https://everse.software/RSQKit/software_maintenance) for concrete ways to track technical debt, such as issue-tracker labels and protected refactoring time.
-
----
 
 # Principle 5: Plan for long-term maintenance
 
@@ -136,46 +127,9 @@ Two habits make this manageable rather than overwhelming:
 
 See this [overview of software maintenance types](https://www.geeksforgeeks.org/software-engineering/software-engineering-software-maintenance/) for more detail on the categories above.
 
----
-
-# Common pitfalls
-
-## Optimising too early
-
-[Premature optimisation](https://en.wikipedia.org/wiki/Program_optimization) often makes code more difficult to understand. Write code that is correct and maintainable first, and optimise only when measurements show it is necessary.
-
-## Chasing perfect architecture
-
-Research software evolves alongside research questions. Design your software so that it can change, rather than trying to anticipate every future requirement—the [YAGNI principle](https://martinfowler.com/bliki/Yagni.html) ("You Aren't Gonna Need It").
-
-## Ignoring technical debt
-
-Shortcuts are sometimes necessary, but leaving them in place indefinitely, unrecognised, makes future development more difficult. See Martin Fowler's [explanation of technical debt](https://martinfowler.com/bliki/TechnicalDebt.html) for how to reason about when a shortcut is acceptable. For a nice read on where the metaphor came from and how it's often misused in practice, see ["Technical Debt: The Man, the Metaphor, the Message"](https://neopragma.com/2019/03/technical-debt-the-man-the-metaphor-the-message/).
-
----
-
 # Take-away
 
 Maintainable software is not the result of one large refactoring effort. It is the result of many small decisions that make code easier to understand, modify, and review—and of planning for the maintenance that continues long after the initial development is done.
-
----
-
-# Checklist
-
-Consider the following questions:
-
-- Does your project have a consistent directory structure?
-- Can a new contributor quickly identify where important files are located?
-- Are variables and functions clearly named?
-- Do functions have a single responsibility?
-- Is code written for readability rather than cleverness?
-- Are important changes reviewed before they are merged?
-- Do you use automated code quality tools where appropriate?
-- Do you make small improvements as part of your normal development workflow?
-- Are your dependencies pinned, and revisited periodically rather than never?
-- If the project is no longer actively maintained, does the README say so?
-
----
 
 # Related guides
 

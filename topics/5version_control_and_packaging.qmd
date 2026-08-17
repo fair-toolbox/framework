@@ -83,30 +83,9 @@ flowchart TD
 
 That last step connects directly to citation: once a release is archived with a persistent identifier, it can be cited precisely. See [Making research software citable](10citations.qmd).
 
-# Common pitfalls
-
-## Releasing without tagging
-
-Publishing a package without a corresponding git tag means there is no way to trace an installed version back to the exact source code that produced it.
-
-## Inconsistent, manual releases
-
-When releases depend on someone remembering the right sequence of manual steps, the process eventually gets done wrong—or skipped entirely under time pressure.
-
-## Breaking changes without a version bump
-
-Changing behaviour without incrementing the MAJOR version misleads anyone relying on semantic versioning to judge whether an upgrade is safe.
-
 # Take-away
 
 Versioning and packaging turn your software from a moving target into something others can install, depend on, and reference precisely. Tag your releases, follow a consistent versioning scheme, and automate the process so it happens the same way every time.
-
-# Checklist
-
-- Do your releases follow semantic versioning?
-- Is every release marked with a git tag?
-- Can someone install your software with a single command, rather than cloning and configuring it manually?
-- Is your release process automated through CI/CD rather than manual steps?
 
 # Related guides
 
