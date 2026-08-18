@@ -13,18 +13,18 @@ Coming soon; a short description of the activities organised around this framewo
 ```{=html}
 <div class="topic-grid">
 
-<a class="topic-card" href="#">
-<h4>Licensing Outreach</h4>
+<a class="topic-card" href="activities/1licensing_outreach.html">
+<h4>1. Licensing Outreach</h4>
 <p>Coming soon.</p>
 </a>
 
-<a class="topic-card" href="#">
-<h4>Hackathon 1</h4>
+<a class="topic-card" href="activities/2hackathon1.html">
+<h4>2. Hackathon 1</h4>
 <p>Coming soon.</p>
 </a>
 
-<a class="topic-card" href="#">
-<h4>Hackathon 2</h4>
+<a class="topic-card" href="activities/3hackathon2.html">
+<h4>3. Hackathon 2</h4>
 <p>Coming soon.</p>
 </a>
 

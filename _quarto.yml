@@ -34,5 +34,15 @@ website:
           - text: 10. citations
             href: topics/10citations.qmd
 
-      - href: activities.qmd
+      - text: activities
+        menu:
+          - text: about activities
+            href: activities.qmd
+          - text: 1. licensing outreach
+            href: activities/1licensing_outreach.qmd
+          - text: 2. hackathon 1
+            href: activities/2hackathon1.qmd
+          - text: 3. hackathon 2
+            href: activities/3hackathon2.qmd
+
       - href: about.qmd
