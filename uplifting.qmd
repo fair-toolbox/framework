@@ -5,7 +5,7 @@ page-layout: full
 ---
 
 ::: {.page-intro}
-Research software is a scientific output in its own right, but it doesn't become Findable, Accessible, Interoperable, or Reusable by accident. Each of the topics below breaks the FAIR principles down into a concrete area of practice—repositories, testing, documentation, and so on—with practical guidance on what to change and why it matters.
+This guide grew out of the preparation work for hackathons run as part of the FAIRtools framework project: material originally put together to get participants up to speed was turned into a standing reference. That gathering of sources and information is shared here for anyone to use, in the hope that it helps improve FAIR tools beyond just the people who attended those sessions. Research software is a scientific output in its own right, but it doesn't become Findable, Accessible, Interoperable, or Reusable by accident. Each of the topics below breaks the FAIR principles down into a concrete area of practice—repositories, testing, documentation, and so on—with practical guidance on what to change and why it matters.
 
 You don't need to work through them in order. If one of the sentences below sounds familiar, that topic is a good place to start.
 :::
