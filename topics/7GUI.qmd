@@ -1,5 +1,70 @@
 ---
-title: Graphical user interface 
+title: "Providing a Graphical User Interface"
+subtitle: "Making your software usable beyond the command line"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
 ---
 
-Coming soon; this is a placeholder.
+::: {.callout-note}
+## FAIR contribution
+
+The guide primarily supports the following FAIR principle:
+
+**Accessible**
+
+- A graphical interface lets people who don't write code still run your software and access its results.
+
+:::
+
+# Why provide a graphical user interface?
+
+A command-line tool is accessible to people who already write code. It is not accessible to a colleague, a clinician, or a student who needs to run an analysis but has never opened a terminal. A GUI turns software only your immediate team can operate into something a much wider group of people can actually use.
+
+A GUI is also a real investment—it is another piece of software to build and keep in sync with the logic underneath it—so it is worth being deliberate about when to build one, and how much of one you actually need.
+
+# Principle 1: Decide whether a GUI is worth building
+
+Not all software benefits from a graphical interface. A tool that mostly runs inside pipelines or on an HPC cluster gains little from one, and building it anyway is often wasted effort. A GUI pays off when the primary users are not programmers, when the tool is meant to be explored interactively, or when a [demo environment](6demo_environment.qmd) needs a way for people to actually interact with the software rather than just read about it.
+
+# Principle 2: Choose a technology that matches your effort budget
+
+The right tool depends on how much of a standalone application you actually need—not on what happens to be familiar.
+
+| Type | Tool | Good for |
+|---|---|---|
+| In-notebook | [ipywidgets](https://ipywidgets.readthedocs.io/) | Adding interactive controls inside an existing Jupyter notebook |
+| Lightweight web app | [Streamlit](https://streamlit.io/) | Turning a Python script into a shareable web app quickly |
+| Model/demo interface | [Gradio](https://www.gradio.app/) | Wrapping a model or function with ready-made inputs and outputs |
+| R (or Python) web app | [Shiny](https://shiny.posit.co/) | Interactive apps built directly on top of existing analysis code |
+| Native desktop app | [Tkinter](https://docs.python.org/3/library/tkinter.html) / [Qt for Python](https://doc.qt.io/qtforpython/) | A standalone application with no browser or server involved |
+
+Wrapping an existing script in a lightweight web app is usually far less effort than building a full desktop application, and it is often all a research tool needs.
+
+# Principle 3: Keep the interface a thin layer over the logic
+
+The GUI should call the same functions your command-line tool or library already exposes, not duplicate the underlying logic behind button clicks. If your analysis code only exists inside event handlers, it becomes difficult to test, reuse from a script, or run in a pipeline—see [Writing maintainable research software](3software_engineering_quality.qmd) for why that separation matters more broadly.
+
+# Principle 4: Design for the person using it, not for yourself
+
+You already know what every button does; a first-time user does not. A few habits go a long way:
+
+- meaningful labels and sensible default values, instead of blank fields;
+- error messages that explain what to fix, not just that something failed;
+- disabling or hiding actions that only make sense once earlier steps are complete.
+
+Jakob Nielsen's [ten usability heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/) are a compact, well-established checklist for this kind of design, and apply just as well to a small internal tool as to a commercial product.
+
+# Take-away
+
+A GUI is not a requirement for FAIR software, but for many intended users it is what makes "accessible" mean something in practice. Build one deliberately—matched to your effort budget, layered thinly over logic that still works without it, and designed around the person who will actually click the buttons.
+
+# Related guides
+
+Continue improving your software by exploring:
+
+- [Providing a demo environment](6demo_environment.qmd)
+- [Writing maintainable research software](3software_engineering_quality.qmd)
+- [Documenting research software](4documentation.qmd)

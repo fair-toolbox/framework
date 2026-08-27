@@ -1,5 +1,52 @@
 ---
-title: improving workflows 
+title: "Improving Your Research Workflows"
+subtitle: "Turning a sequence of manual steps into an automated, reproducible pipeline"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
 ---
 
-Coming soon; this is a placeholder.
+::: {.callout-note}
+## FAIR contribution
+
+The guide primarily supports the following FAIR principle:
+
+**Reusable**
+
+- An automated, documented workflow lets others rerun your entire analysis, not just a single script from it.
+
+:::
+
+# Why improve your workflow?
+
+Most research analyses are not a single script—they are a sequence: download data, clean it, run several tools in a specific order, combine the outputs, produce a figure. When that sequence lives only in your memory, or as a handful of commands you ran once and half-remember, no one can rerun it reliably, including you, six months later. A workflow is what happens when that sequence becomes explicit, automated, and reproducible.
+
+# Principle 1: Replace manual steps with an executable pipeline
+
+The right level of tooling depends on how complex the pipeline is. [GNU Make](https://www.gnu.org/software/make/) is often enough for a handful of steps: it reruns only the steps whose inputs changed. For larger scientific pipelines, dedicated workflow managers such as [Snakemake](https://snakemake.readthedocs.io/), [Nextflow](https://www.nextflow.io/), and the [Common Workflow Language (CWL)](https://www.commonwl.org/) add features like parallel execution, restart-from-failure, and support for running on a cluster or in the cloud without changing the pipeline itself. This is the same tooling covered in [Interoperability](8interoperability.qmd#principle-4-make-your-software-composable-in-workflows)—the difference is one of direction: that guide is about making *your tool* usable inside someone else's pipeline, while this one is about building *your own* pipeline out of the tools you already use.
+
+# Principle 2: Make each step re-runnable on its own
+
+A workflow manager can only skip steps that have not changed if each step reads well-defined inputs and writes well-defined outputs. Steps that depend on a manual action in between—copying a file by hand, editing a config partway through—break that guarantee and quietly turn an automated pipeline back into a manual one.
+
+# Principle 3: Record what actually happened, not just what should happen
+
+A pipeline that runs is not automatically a pipeline you can trust six months later—you also need a record of what ran, with which inputs, code version, and parameters, so a result can be traced back to how it was produced. Snakemake and Nextflow can generate an execution report and trace for every run; [W3C PROV](https://www.w3.org/TR/prov-overview/) is the broader standard this idea builds on, describing how to represent provenance so it can be exchanged between tools; [RO-Crate](https://www.researchobject.org/ro-crate/) packages a workflow run's description together with its outputs into a single citable object, and is the format WorkflowHub (mentioned in [Interoperability](8interoperability.qmd)) uses to describe workflows.
+
+# Principle 4: Automate execution instead of running by hand
+
+Once a workflow is defined, running it should not depend on remembering the right command at the right time. Trigger it the same way you would trigger [automated tests](2testing.qmd)—on a schedule, on a push, or as part of your existing CI setup—or on shared infrastructure such as an HPC scheduler. Connecting it to a [demo environment](6demo_environment.qmd) goes a step further: instead of only reading about the pipeline, others can run the whole thing themselves.
+
+# Take-away
+
+Improving a workflow is not about adopting the most sophisticated tool available—it is about making the steps between raw data and your result explicit, automated, and traceable, so the whole analysis, not just one script inside it, is something someone else can pick up and rerun.
+
+# Related guides
+
+Continue improving your software by exploring:
+
+- [Interoperability](8interoperability.qmd)
+- [Testing research software](2testing.qmd)
+- [Providing a demo environment](6demo_environment.qmd)
