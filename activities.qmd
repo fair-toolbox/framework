@@ -5,7 +5,7 @@ page-layout: full
 ---
 
 ::: {.page-intro}
-Coming soon; a short description of the activities organised around this framework.
+The FAIRtools framework project is more than this guide—it also includes the events and outreach organised around it. Below are the activities run so far, from hands-on hackathons to targeted licensing outreach, each with its own page covering what it involved and what came out of it.
 :::
 
 ## Activities
