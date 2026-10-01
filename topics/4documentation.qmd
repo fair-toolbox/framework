@@ -113,6 +113,12 @@ my-project/
 
 Good documentation is not one large document—it is a small set of focused documents, each answering the questions a specific audience actually has. Keeping it close to the code and updating it alongside changes is more sustainable than writing it all at once.
 
+# In practice
+
+This topic was put into practice in the following activities:
+
+- [Hackathon 1](../activities/2hackathon1.qmd) and [Hackathon 2](../activities/3hackathon2.qmd): developers worked together on making their tools available on SURF Research Cloud.
+
 # Related guides
 
 Continue improving your software by exploring:

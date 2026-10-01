@@ -1,5 +1,30 @@
 ---
-title: Hackathon 1
+title: "Hackathon 1"
+subtitle: "Bringing research tools to SURF Research Cloud"
 ---
 
-Coming soon; this is a placeholder.
+A research tool is only as accessible as the effort it takes to get it running. Many tools only work on their developer's own machine or need a long, fragile installation. For other researchers, that is often enough reason not to try them at all.
+
+[SURF Research Cloud](https://www.surf.nl/en/services/surf-research-cloud) offers a way around this. Researchers in the Netherlands can start a ready-to-use workspace with a tool already installed, without setting anything up themselves. Getting a tool onto the platform, however, takes some technical work that many research software developers have not done before.
+
+This first of two hackathons, held on 2 February at the SURF office in Utrecht, brought developers together to do that work, with hands-on support. Participants worked on making their own tools available on SURF Research Cloud, so that other researchers can start using them with just a few clicks.
+
+Developers of the following tools took part:
+
+- [Mutalyzer](https://mutalyzer.nl)
+- [Elastix](https://github.com/SuperElastix/elastix)
+- [AOP-Wiki SNORQL](https://aopwiki.rdf.bigcat-bioinformatics.org/)
+- [dnabarcoder](https://github.com/vuthuyduong/dnabarcoder)
+- [WikiPathways](https://www.wikipathways.org) and [BridgeDb](https://www.bridgedb.org)
+- [metataxonx-nf](https://github.com/CMG-GUTS/metataxonx)
+- [SIQPlotteR](https://github.com/RobinVanSchendel/SIQ)
+- [quickLD](https://github.com/pephco/quickLD) and [RAiSD-AI](https://github.com/alachins/RAiSD-AI)
+
+The second hackathon continued this work; see [Hackathon 2](3hackathon2.qmd) for the progress made.
+
+## Related topics
+
+The hackathon puts these topics from the [uplifting guide](../uplifting.qmd) into practice:
+
+- [Providing a demo environment](../topics/6demo_environment.qmd)
+- [Documenting research software: Installation and deployment](../topics/4documentation.qmd#principle-3-document-installation-and-deployment)

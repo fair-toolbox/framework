@@ -156,6 +156,12 @@ Before publishing, check the license of every dependency you rely on, particular
 
 Publishing your source code is a starting point, not an end point. Software becomes findable, accessible, and reusable once it is also archived with a persistent identifier, indexed in a registry researchers actually search, and released under a license that makes its reuse conditions explicit.
 
+# In practice
+
+This topic was put into practice in the following activities:
+
+- [Licensing outreach](../activities/1licensing_outreach.qmd): 36 GitHub issues led to 4 open source science tools getting a correct software license.
+
 # Related guides
 
 Continue improving your software by exploring:

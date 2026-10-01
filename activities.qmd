@@ -15,17 +15,17 @@ The FAIRtools framework project is more than this guide—it also includes the e
 
 <a class="topic-card" href="activities/1licensing_outreach.html">
 <h4>1. Licensing Outreach</h4>
-<p>Coming soon.</p>
+<p>36 GitHub issues opened, 4 open source science tools now correctly licensed.</p>
 </a>
 
 <a class="topic-card" href="activities/2hackathon1.html">
 <h4>2. Hackathon 1</h4>
-<p>Coming soon.</p>
+<p>Helping developers make their tools available on SURF Research Cloud.</p>
 </a>
 
 <a class="topic-card" href="activities/3hackathon2.html">
 <h4>3. Hackathon 2</h4>
-<p>Coming soon.</p>
+<p>Three tools completed the full process to SURF Research Cloud, two more moved closer.</p>
 </a>
 
 </div>

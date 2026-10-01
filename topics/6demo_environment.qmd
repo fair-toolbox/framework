@@ -77,6 +77,12 @@ A demo environment that quietly falls behind the current release is worse than n
 
 A demo environment turns "try installing this to see if it works for you" into "click this link and see it work." Building it on the same container you use for reproducibility, and keeping it in sync with your releases, keeps that promise from quietly becoming false.
 
+# In practice
+
+This topic was put into practice in the following activities:
+
+- [Hackathon 1](../activities/2hackathon1.qmd) and [Hackathon 2](../activities/3hackathon2.qmd): developers worked together on making their tools available on SURF Research Cloud.
+
 # Related guides
 
 Continue improving your software by exploring:

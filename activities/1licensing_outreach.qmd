@@ -1,5 +1,16 @@
 ---
-title: Licensing outreach
+title: "Licensing Outreach"
+subtitle: "Helping open source science tools get their licensing right"
 ---
 
-Coming soon; this is a placeholder.
+Publishing source code is not the same as making it reusable. Without a clear and correct license, nobody has legal permission to use, modify, or redistribute the software, however openly it is shared. Many research tools are missing a license or use one that does not match how the software is actually meant to be used. This makes it harder to reuse them, often without the authors realising.
+
+As part of the FAIRtools framework project, we reached out to developers of open source science tools directly. We opened **36 GitHub issues** that pointed out missing or incorrect licensing and explained why it matters for reuse, with practical suggestions for fixing it.
+
+As a result, **4 tools** now have a correct software license, which makes them legally reusable by other researchers.
+
+## Related topics
+
+Want to check your own software? These topics in the [uplifting guide](../uplifting.qmd) cover it:
+
+- [Repositories, registries & archiving: Licensing and compatibility](../topics/1repositories.qmd#licensing-and-compatibility)
