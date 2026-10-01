@@ -7,12 +7,6 @@ format:
     toc-depth: 2
 ---
 
-::: {.callout-note}
-## How to use this checklist
-
-Each section summarises one of the [uplifting topics](uplifting.qmd). Unchecked items point to where your software can improve; follow the topic link for the reasoning and practical guidance behind each item.
-:::
-
 ## 1. [Repositories, registries & archiving](topics/1repositories.qmd)
 
 - [ ] Source code is in a public repository (GitHub/GitLab)
