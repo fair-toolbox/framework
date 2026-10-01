@@ -1,0 +1,121 @@
+---
+title: "FAIR Research Software Checklist"
+subtitle: "A quick self-assessment across all ten uplifting topics"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+::: {.callout-note}
+## How to use this checklist
+
+Each section summarises one of the [uplifting topics](uplifting.qmd). Unchecked items point to where your software can improve; follow the topic link for the reasoning and practical guidance behind each item.
+:::
+
+## 1. [Repositories, registries & archiving](topics/1repositories.qmd)
+
+- [ ] Source code is in a public repository (GitHub/GitLab)
+- [ ] The repository has a README and an open-source license (MIT, Apache 2.0, BSD 3-Clause, GPL-3.0, …)
+- [ ] The license is compatible with the licenses of all dependencies (copyleft, unlicensed, non-commercial)
+- [ ] Releases are archived with a persistent identifier (e.g. Zenodo, linked to GitHub)
+- [ ] The software is listed in a registry (Research Software Directory, bio.tools, …)
+
+## 2. [Testing](topics/2testing.qmd)
+
+- [ ] Automated tests cover the most critical functions
+- [ ] Tests run automatically in CI on every push and pull request
+- [ ] Tests live in a dedicated `tests/` directory that mirrors `src/`
+- [ ] A test is added with every bug fix and every new feature
+
+## 3. [Software engineering quality](topics/3software_engineering_quality.qmd)
+
+- [ ] The project layout is consistent (`src/`, `tests/`, `docs/`, `examples/`, LICENSE, README, configuration)
+- [ ] Code uses descriptive names, guard clauses, and focused functions, without commented-out dead code
+- [ ] Changes are reviewed by a person, supported by linters and static analysis
+- [ ] Code is improved incrementally as part of everyday work
+- [ ] Dependencies are pinned and periodically updated
+- [ ] Maintenance status is stated in the README (e.g. a repostatus.org badge)
+
+## 4. [Documentation](topics/4documentation.qmd)
+
+- [ ] Documentation addresses users, deployers, and developers
+- [ ] The README covers description, installation, usage, citation, license, and contributing
+- [ ] Installation and usage commands work exactly as written
+- [ ] Dependencies, environment setup, external services, and configuration are documented
+- [ ] A `CONTRIBUTING.md` covers architecture, development setup, running tests, and review expectations
+- [ ] Functions have docstrings, and API documentation is generated from them (Sphinx / Read the Docs)
+
+## 5. [Versioning & packaging](topics/5version_control_and_packaging.qmd)
+
+- [ ] Versions follow semantic versioning (`MAJOR.MINOR.PATCH`)
+- [ ] Each release is a git tag and a GitHub Release with release notes
+- [ ] The software is packaged for its ecosystem (PyPI, CRAN/Bioconductor, npm, …)
+- [ ] Pushing a version tag triggers CI to build, publish, and archive the release
+
+## 6. [Demo environment](topics/6demo_environment.qmd)
+
+- [ ] A container definition exists (Docker / Apptainer)
+- [ ] The demo runs without local setup (Binder, Colab, Codespaces, Hugging Face Spaces)
+- [ ] The demo includes example data and an end-to-end walkthrough notebook or script
+- [ ] The demo is pinned to a recent release and updated as part of every release
+
+## 7. [Graphical user interface](topics/7GUI.qmd)
+
+- [ ] You have deliberately decided whether a GUI is worth building
+- [ ] The chosen technology matches your effort budget (ipywidgets, Streamlit, Gradio, Shiny, Tkinter/Qt)
+- [ ] The GUI is a thin layer that calls the same functions as the CLI or library
+- [ ] The GUI has clear labels, sensible defaults, helpful error messages, and guided steps
+
+## 8. [Interoperability](topics/8interoperability.qmd)
+
+- [ ] Data uses open, standard formats (CSV/Parquet, JSON/YAML, HDF5/NetCDF/Zarr, FASTA/FASTQ/VCF)
+- [ ] The command-line interface follows conventions: stdin/stdout, `--help`/`--version`, non-zero exit code on failure
+- [ ] APIs follow REST conventions and publish an OpenAPI specification
+- [ ] Interfaces are described with machine-readable metadata (CodeMeta, EDAM)
+- [ ] The tool fits into workflow managers: clear inputs and outputs, no interactive prompts or hidden state
+
+## 9. [Improving workflows](topics/9improving_workflows.qmd)
+
+- [ ] Manual steps are replaced by an executable pipeline (Make, Snakemake, Nextflow, CWL)
+- [ ] Each step has well-defined inputs and outputs, with no manual actions in between
+- [ ] Each run's provenance is recorded: inputs, code version, parameters (execution reports, W3C PROV, RO-Crate)
+- [ ] The pipeline runs automatically (CI, on a schedule, or on HPC) rather than by hand
+
+## 10. [Citation](topics/10citations.qmd)
+
+- [ ] The repository contains an up-to-date `CITATION.cff` (authors, version, DOI)
+- [ ] Each release is archived with its own DOI (Zenodo)
+- [ ] The repository contains a `codemeta.json` with machine-readable metadata
+- [ ] Identifiers are consistent: an ORCID for every author, and the same DOI, repository URL, and version everywhere
+
+```{=html}
+<p><button type="button" class="btn btn-outline-secondary btn-sm" id="checklist-reset">Clear all checkboxes</button></p>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var key = "fair-checklist";
+  var boxes = Array.from(document.querySelectorAll("ul.task-list input[type=checkbox]"));
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) {}
+
+  function save() {
+    var state = {};
+    boxes.forEach(function (box) { if (box.checked) state[box.dataset.item] = true; });
+    try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+  }
+
+  boxes.forEach(function (box) {
+    box.disabled = false;
+    box.dataset.item = box.closest("li").textContent.trim();
+    box.checked = !!saved[box.dataset.item];
+    box.addEventListener("change", save);
+  });
+
+  document.getElementById("checklist-reset").addEventListener("click", function () {
+    boxes.forEach(function (box) { box.checked = false; });
+    save();
+  });
+});
+</script>
+```
