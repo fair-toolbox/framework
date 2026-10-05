@@ -1,0 +1,69 @@
+---
+title: "Hackathon 3"
+subtitle: "Exploring LLMs for research and FAIR data"
+---
+
+This hackathon will be held on 27 November at the [SURF](https://www.surf.nl/en) in Amsterdam. It will **bring together** researchers, developers, data managers and infrastructure experts to **explore practical uses of large language model (LLMs)**.
+
+The morning presentations will set the stage by **introducing key topics** such as LLM services and developments at SURF Research Cloud, AI for analysis-ready data, as well as LLM-based metadata extraction, data access brokers, and data discovery. Participants will **briefly pitch their challenges, experiences or project** related to LLMs.
+
+The afternoon is dedicated to a hackathon that is deliberately designed to be **flexible and participant-driven**. It will be shaped around the participants by considering their backgrounds, interests and projects. They will **form groups around shared goals and complementary expertise**, and use the afternoon to work hands-on on their own use cases, data, software, or ideas.
+
+## Who should attend
+
+We warmly welcome participants from a broad range of domains, including: **Human health & medicine**, **Biotechnology & biomanufacturing**, **Agriculture & food**, **Environment & sustainability**, **Fundamental life sciences**, and **Life science technologies & infrastructure**.
+
+You do **not need to be an LLM expert**. The hackathon is intended both for people who want to experiment with LLMs and for those who already have experience and want to apply that expertise to concrete research challenges.
+
+Possible use cases include:
+
+* **Software interoperability**: use LLMs to help different software tools interoperate through data.
+* **LLMs as research assistants**: use LLM-based tools to support data analysis, coding, visualization.
+* **Data discovery and access**: explore how LLMs can assist with automated data discovery and access.
+* **Structured data extraction**: use LLMs to extract structured information from unstructured sources.
+* **Learning and exploration**: learn about using LLMs in research and data management more generally.
+
+## Bring your own
+
+Participants are encouraged to bring something of their own to the hackathon. This could be:
+
+* **Your own data** — a dataset, metadata, documentation or other resource you would like to explore with LLMs.
+* **Your own software** — a research tool, workflow or API that you would like to make more interoperable or easier to use with LLMs.
+* **Your own expertise** — knowledge, skills, or experience that you can contribute to a group. This might be expertise in a research domain, data management, software development, AI/LLMs, metadata, research infrastructure, or a specific scientific workflow. You do not need to arrive with a ready-made project; your expertise itself can be a valuable contribution to another participant's challenge.
+
+The goal is to bring these together and explore a shared challenge resulting in practical experiments, prototypes, insights, or ideas for follow-up work.
+
+## Draft program
+
+The day features a combination of presentations, pitches, and collaborative hacking:
+
+| Time  | Activity                                                                                                                                 |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 09:30 | Walk in & coffee                                                                                                                         |
+| 10:00 | Short presentations: welcome, TDCC-LSH updates, latest developments, use cases, data discovery/research infrastructure |
+| 11:00 | Short pitches: participants present their project or use case (max. 5 minutes, including short discussion)                               |
+| 12:00 | Lunch and finalization of the hackathon groups                                                                                           |
+| 13:00 | **Hackathon**: hands-on work in groups around shared goals and complementary knowledge and skills                                        |
+| 16:00 | Reports per group: results, lessons learned, and potential follow-up                                                                     |
+| 17:00 | Closing                                                                                                                                  |
+
+## Practical information
+
+* **Date:** 27 November 2026
+* **Time:** 09:30–17:00
+* **Location:** SURF, Science Park 140, 1098 XG Amsterdam
+* **Registration deadline:** 6 November 2026
+* **Participants:** maximum 20
+* **Cost:** free, sponsored by the NWO TDCC-LSH
+* **Organiser:** TDCC-LSH project *FAIR tool framework*
+
+There is a maximum of **20 participants**. If we receive more registrations than places available, participants will be selected with consideration for the number of representatives from each institute.
+
+**>Register for the hackathon [here](https://forms.gle/dYE4FC8hQEmZMzVD9)**
+
+## Related topics
+
+The hackathon puts topics from the [uplifting guide](../uplifting.qmd) into practice, particularly around making research software and data more discoverable and reusable.
+
+* [Providing a demo environment](../topics/6demo_environment.qmd)
+* [Documenting research software: Installation and deployment](../topics/4documentation.qmd#principle-3-document-installation-and-deployment)
