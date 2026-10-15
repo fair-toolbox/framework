@@ -44,6 +44,8 @@ website:
             href: activities/2hackathon1.qmd
           - text: 3. hackathon 2
             href: activities/3hackathon2.qmd
+          - text: 4. hackathon 3
+            href: activities/4hackathon3.qmd
 
       - text: checklist
         href: checklist.qmd
