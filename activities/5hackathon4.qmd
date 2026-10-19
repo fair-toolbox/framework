@@ -1,0 +1,60 @@
+---
+title: "Hackathon 4"
+subtitle: "Bringing research tools to Galaxy"
+---
+
+This hackathon will be held on 11 December at [SURF](https://www.surf.nl/en) in Amsterdam. It will **bring together** tool developers and users to **make research tools available in [Galaxy](https://usegalaxy.org)**, the open-source web platform for accessible, reproducible data analysis.
+
+The day opens with an **introduction to Galaxy**. After that, the rest of the day is dedicated to **hands-on work**: participants bring a tool they know well and work on packaging it for Galaxy, so that researchers can run it through a web interface and combine it with other tools in Galaxy workflows.
+
+## Who should attend
+
+The hackathon is intended for **developers and users of research tools** who want to make their tool easier to use and combine with other tools. Participants should be:
+
+* **Comfortable with programming**.
+* **Familiar with the Linux command line**, at least at a basic level.
+* **Very familiar with the tool** they want to package.
+* **Familiar with [SURF Research Cloud](https://www.surf.nl/en/services/surf-research-cloud)**, or willing to join a preparatory workshop on 29 November or 5 December.
+
+## Bring your own tool
+
+Participants work on a tool of their own choosing. You can be the developer of the tool or a user of it, and you can register to work on more than one tool. To be a good fit for Galaxy, the tool should:
+
+* **Be command-line based**, not graphical user interface based.
+* **Take one of the [supported datatypes](https://usegalaxy.org/datatypes) as input.**
+* **Run on Linux (Ubuntu).**
+* **Have a workable software license.** See the [licensing outreach](1licensing_outreach.qmd) for why this matters.
+
+## Draft program
+
+| Time        | Activity              |
+| ----------- | --------------------- |
+| 10:00–11:00 | Intro into Galaxy     |
+| 11:00–12:15 | **Hackathon part 1**  |
+| 12:15–13:00 | Lunch                 |
+| 13:00–14:15 | **Hackathon part 2**  |
+| 14:15–14:45 | Coffee break          |
+| 14:45–16:00 | **Hackathon part 3**  |
+| 16:00–16:30 | Closing               |
+
+## Practical information
+
+* **Date:** 11 December 2026
+* **Time:** 10:00–16:30
+* **Location:** SURF, Science Park 140, 1098 XG Amsterdam
+* **Registration deadline:** 20 November 2026
+* **Participants:** maximum 16
+* **Cost:** free, sponsored by the NWO TDCC-LSH
+* **Organiser:** TDCC-LSH project *FAIR tool framework*
+
+There is a maximum of **16 participants**, and places are assigned on a **first-come, first-served** basis.
+
+**>Register for the hackathon [here](https://forms.gle/tZTgi9gv3obVnqMB8)**
+
+## Related topics
+
+The hackathon puts these topics from the [uplifting guide](../uplifting.qmd) into practice:
+
+* [Interoperability: Make your software composable in workflows](../topics/8interoperability.qmd#principle-4-make-your-software-composable-in-workflows)
+* [Improving workflows](../topics/9improving_workflows.qmd)
+* [Providing a graphical user interface](../topics/7GUI.qmd)

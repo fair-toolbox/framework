@@ -33,5 +33,10 @@ The FAIRtools framework project is more than this guide—it also includes the e
 <p>Exploring practical LLM use cases for research data discovery and infrastructure.</p>
 </a>
 
+<a class="topic-card" href="activities/5hackathon4.html">
+<h4>5. Hackathon 4</h4>
+<p>Packaging research tools for the Galaxy platform.</p>
+</a>
+
 </div>
 ```
