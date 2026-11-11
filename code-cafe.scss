@@ -99,3 +99,38 @@ body.fullcontent .page-columns .content {
   font-style: italic;
   color: $color3;
 }
+
+// Collapsible sections without a box: arrow in front of an h2-styled heading
+.section-dropdown {
+  margin: 1.5rem 0;
+
+  > summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: $color2;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  > summary::before {
+    content: "▸";
+    display: inline-block;
+    transition: transform 0.15s ease;
+  }
+
+  &[open] > summary::before {
+    transform: rotate(90deg);
+  }
+
+  > summary:hover {
+    color: $color3;
+  }
+}

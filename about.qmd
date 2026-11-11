@@ -1,5 +1,28 @@
 ---
-title: about 
+title: "about"
+subtitle: "What the FAIRtools framework is and why it exists"
 ---
 
-Coming soon; Information about this project.
+The **FAIRtools framework** is a project funded by the [NWO](https://www.nwo.nl/en) Thematic Digital Competence Centre for Life Sciences & Health (**TDCC-LSH**). Its goal is to help researchers and research software engineers make their software **FAIR**: Findable, Accessible, Interoperable, and Reusable.
+
+## Why research software
+
+Research software is a scientific output in its own right. Analyses, papers, and datasets depend on it, yet much of it is hard to find, hard to install, missing a license, or impossible to tie to the exact version that produced a result. None of that is usually deliberate. Most research software is written by researchers under time pressure, and the practices that make software reusable are rarely part of their training.
+
+The FAIR principles were originally written for data. Applying them to software means turning them into concrete, everyday practices: where to put the code, how to test and document it, how to package and release it, and how to make it easy to cite.
+
+## What the project does
+
+The project works on two fronts.
+
+**A practical guide.** The [uplifting guide](uplifting.qmd) breaks the FAIR principles down into ten areas of practice, from repositories and testing to interoperability and citations. Each topic explains what to change and why it matters. The [checklist](checklist.qmd) condenses all ten topics into a quick self-assessment.
+
+**Hands-on activities.** The guide grew out of the preparation for events organised by the project, and those events remain a core part of it. They range from [licensing outreach](activities/1licensing_outreach.qmd) to hackathons where developers bring their own tools to platforms such as [SURF Research Cloud](activities/2surf_research_hackathon.qmd) and [Galaxy](activities/4Galaxy_hackathon.qmd). See [activities](activities.qmd) for the full overview.
+
+## Who it is for
+
+The material is written for **researchers who write code** and for **research software engineers** who support them. You don't need to be a professional developer to use it. Each topic starts from a familiar problem and works toward a practical fix, so you can pick the ones that matter for your software and skip the rest.
+
+## Contributing
+
+This website is open source and built with [Quarto](https://quarto.org/). Suggestions, corrections, and additions are welcome through the project's [GitHub repository](https://github.com/fair-toolbox/framework).
