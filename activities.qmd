@@ -18,23 +18,18 @@ The FAIRtools framework project is more than this guide—it also includes the e
 <p>36 GitHub issues opened, 4 open source science tools now correctly licensed.</p>
 </a>
 
-<a class="topic-card" href="activities/2hackathon1.html">
-<h4>2. Hackathon 1</h4>
-<p>Helping developers make their tools available on SURF Research Cloud.</p>
+<a class="topic-card" href="activities/2surf_research_hackathon.html">
+<h4>2. SURF Research Cloud Hackathons</h4>
+<p>Two hackathons helping developers bring their tools to SURF Research Cloud; three tools completed the full process.</p>
 </a>
 
-<a class="topic-card" href="activities/3hackathon2.html">
-<h4>3. Hackathon 2</h4>
-<p>Three tools completed the full process to SURF Research Cloud, two more moved closer.</p>
-</a>
-
-<a class="topic-card" href="activities/4hackathon3.html">
-<h4>4. Hackathon 3</h4>
+<a class="topic-card" href="activities/3LLM_hackathon.html">
+<h4>3. LLM Hackathon</h4>
 <p>Exploring practical LLM use cases for research data discovery and infrastructure.</p>
 </a>
 
-<a class="topic-card" href="activities/5hackathon4.html">
-<h4>5. Hackathon 4</h4>
+<a class="topic-card" href="activities/4Galaxy_hackathon.html">
+<h4>4. Galaxy Hackathon</h4>
 <p>Packaging research tools for the Galaxy platform.</p>
 </a>
 

@@ -117,7 +117,7 @@ Good documentation is not one large document—it is a small set of focused docu
 
 This topic was put into practice in the following activities:
 
-- [Hackathon 1](../activities/2hackathon1.qmd) and [Hackathon 2](../activities/3hackathon2.qmd): developers worked together on making their tools available on SURF Research Cloud.
+- [SURF Research Cloud hackathons](../activities/2surf_research_hackathon.qmd): developers worked together on making their tools available on SURF Research Cloud.
 
 # Related guides
 

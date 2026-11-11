@@ -81,7 +81,7 @@ A demo environment turns "try installing this to see if it works for you" into "
 
 This topic was put into practice in the following activities:
 
-- [Hackathon 1](../activities/2hackathon1.qmd) and [Hackathon 2](../activities/3hackathon2.qmd): developers worked together on making their tools available on SURF Research Cloud.
+- [SURF Research Cloud hackathons](../activities/2surf_research_hackathon.qmd): developers worked together on making their tools available on SURF Research Cloud.
 
 # Related guides
 

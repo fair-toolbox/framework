@@ -1,6 +1,8 @@
 ---
-title: "Hackathon 3"
+title: "LLM hackathon"
 subtitle: "Exploring LLMs for research and FAIR data"
+aliases:
+  - 4hackathon3.html
 ---
 
 This hackathon will be held on 27 November at the [SURF](https://www.surf.nl/en) in Amsterdam. It will **bring together** researchers, developers, data managers and infrastructure experts to **explore practical uses of large language model (LLMs)**.

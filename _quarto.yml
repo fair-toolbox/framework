@@ -40,14 +40,12 @@ website:
             href: activities.qmd
           - text: 1. licensing outreach
             href: activities/1licensing_outreach.qmd
-          - text: 2. hackathon 1
-            href: activities/2hackathon1.qmd
-          - text: 3. hackathon 2
-            href: activities/3hackathon2.qmd
-          - text: 4. hackathon 3
-            href: activities/4hackathon3.qmd
-          - text: 5. hackathon 4
-            href: activities/5hackathon4.qmd
+          - text: 2. SURF research cloud hackathons
+            href: activities/2surf_research_hackathon.qmd
+          - text: 3. LLM hackathon
+            href: activities/3LLM_hackathon.qmd
+          - text: 4. Galaxy hackathon
+            href: activities/4Galaxy_hackathon.qmd
 
       - text: checklist
         href: checklist.qmd

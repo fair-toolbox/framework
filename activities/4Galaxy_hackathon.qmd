@@ -1,6 +1,8 @@
 ---
-title: "Hackathon 4"
+title: "Galaxy hackathon"
 subtitle: "Bringing research tools to Galaxy"
+aliases:
+  - 5hackathon4.html
 ---
 
 This hackathon will be held on 11 December at [SURF](https://www.surf.nl/en) in Amsterdam. It will **bring together** tool developers and users to **make research tools available in [Galaxy](https://usegalaxy.org)**, the open-source web platform for accessible, reproducible data analysis.

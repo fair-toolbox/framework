@@ -1,0 +1,59 @@
+---
+title: "SURF Research Cloud hackathons"
+subtitle: "Bringing research tools to SURF Research Cloud"
+aliases:
+  - 2hackathon1.html
+  - 3hackathon2.html
+---
+
+A research tool is only as accessible as the effort it takes to get it running. Many tools only work on their developer's own machine or need a long, fragile installation. For other researchers, that is often enough reason not to try them at all.
+
+[SURF Research Cloud](https://www.surf.nl/en/services/surf-research-cloud) offers a way around this. Researchers in the Netherlands can start a ready-to-use workspace with a tool already installed, without setting anything up themselves. Getting a tool onto the platform, however, takes some technical work that many research software developers have not done before.
+
+Two hackathons, both held at the SURF office in Utrecht, brought developers together to do that work, with hands-on support. Participants worked on making their own tools available on SURF Research Cloud, so that other researchers can start using them with just a few clicks.
+
+## Getting a tool onto SURF Research Cloud
+
+Getting a tool into the SURF Research Cloud catalog follows a fixed sequence of steps:
+
+1. **Profile login**: set up access to SURF Research Cloud.
+2. **Create VM**: start a virtual machine to work on.
+3. **Deploy tool**: install the tool and get it running on that machine.
+4. **Ansible playbook**: capture the installation in an Ansible playbook, so it can be repeated automatically.
+5. **Create component**: register the playbook as a reusable component.
+6. **Create catalog item**: combine components into an item that researchers can select from the catalog.
+7. **Finished**: the tool is available for others to launch.
+
+## First hackathon: 2 February
+
+At the first hackathon, developers of the following tools took part:
+
+- [Mutalyzer](https://mutalyzer.nl)
+- [Elastix](https://github.com/SuperElastix/elastix)
+- [AOP-Wiki SNORQL](https://aopwiki.rdf.bigcat-bioinformatics.org/)
+- [dnabarcoder](https://github.com/vuthuyduong/dnabarcoder)
+- [WikiPathways](https://www.wikipathways.org) and [BridgeDb](https://www.bridgedb.org)
+- [metataxonx-nf](https://github.com/CMG-GUTS/metataxonx)
+- [SIQPlotteR](https://github.com/RobinVanSchendel/SIQ)
+- [quickLD](https://github.com/pephco/quickLD) and [RAiSD-AI](https://github.com/alachins/RAiSD-AI)
+
+## Second hackathon: 23 March
+
+The second hackathon picked up where the first one left off. Developers returned with their tools partway along the road to SURF Research Cloud, and used the day to take the next steps together.
+
+| Tool | Started at | Reached |
+|---|---|---|
+| [Elastix](https://github.com/SuperElastix/elastix) | Ansible playbook | **Finished** |
+| [AOP-Wiki SNORQL](https://aopwiki.rdf.bigcat-bioinformatics.org/) | Ansible playbook | **Finished** |
+| [BridgeDb](https://www.bridgedb.org) | Create component | **Finished** |
+| [Mutalyzer](https://mutalyzer.nl) | Deploy tool | Create component |
+| [dnabarcoder](https://github.com/vuthuyduong/dnabarcoder) | Deploy tool | Create component |
+
+Three tools completed the full process during this hackathon, and two more moved from a working deployment to an automated, reusable setup.
+
+## Related topics
+
+The hackathons put these topics from the [uplifting guide](../uplifting.qmd) into practice:
+
+- [Providing a demo environment](../topics/6demo_environment.qmd)
+- [Documenting research software: Installation and deployment](../topics/4documentation.qmd#principle-3-document-installation-and-deployment)
