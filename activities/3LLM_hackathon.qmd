@@ -5,7 +5,7 @@ aliases:
   - 4hackathon3.html
 ---
 
-This hackathon will be held on 27 November at the [SURF](https://www.surf.nl/en) in Amsterdam. It will **bring together** researchers, developers, data managers and infrastructure experts to **explore practical uses of large language model (LLMs)**.
+This hackathon will be held on 27 November at the [SURF](https://www.surf.nl/en) in Utrecht. It will **bring together** researchers, developers, data managers and infrastructure experts to **explore practical uses of large language model (LLMs)**.
 
 The morning presentations will set the stage by **introducing key topics** such as LLM services and developments at SURF Research Cloud, AI for analysis-ready data, as well as LLM-based metadata extraction, data access brokers, and data discovery. Participants will **briefly pitch their challenges, experiences or project** related to LLMs.
 
@@ -53,7 +53,7 @@ The day features a combination of presentations, pitches, and collaborative hack
 
 * **Date:** 27 November 2026
 * **Time:** 09:30–17:00
-* **Location:** SURF, Science Park 140, 1098 XG Amsterdam
+* **Location:** SURF, Moreelsepark 48, 3511 EP Utrecht
 * **Registration deadline:** 6 November 2026
 * **Participants:** maximum 20
 * **Cost:** free, sponsored by the NWO TDCC-LSH
